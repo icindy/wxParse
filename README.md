@@ -4,7 +4,7 @@
 
 > 垂直微信小程序开发交流社区
 
-# 效果GIF
+# 效果GIF(加载较慢，请稍候)
 
 ![wxParse.gif](screenshoot/wxParse.gif)
 
