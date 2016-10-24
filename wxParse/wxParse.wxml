@@ -11,6 +11,12 @@
  */-->
 
 <template name="wxParse">
+    <block wx:for="{{wxParseData}}">
+        <template is="wxParse0" data="{{item}}"/>
+    </block>
+</template>
+
+<template name="wxParse0">
     <!--<template is="wxParse1" data="{{item}}" />-->
     <!--判断是否是标签节点-->
     <block wx:if="{{item.node == 'element'}}">

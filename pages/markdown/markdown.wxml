@@ -2,8 +2,6 @@
 <import src="../../wxParse/wxParse.wxml"/>
 
 <view class="wxParse">
-    <block wx:for="{{wxParseData}}">
-        <template is="wxParse" data="{{item}}"/>
-    </block>
+    <template is="wxParse" data="{{wxParseData}}"/>
 </view>
 
