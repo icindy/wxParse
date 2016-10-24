@@ -28,7 +28,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -42,6 +42,15 @@
                     </view>
                 </view>
             </view>
+        </block>
+
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
         </block>
 
         <!--img类型-->
@@ -100,9 +109,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -154,9 +173,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -208,9 +237,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -262,9 +301,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -316,9 +365,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -370,9 +429,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -425,9 +494,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -481,9 +560,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -537,9 +626,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -592,9 +691,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -647,9 +756,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -701,9 +820,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
@@ -756,9 +885,19 @@
             </view>
         </block>
 
+        <!--video类型-->
+        <block wx:elif="{{item.tag == 'video'}}">
+
+            <view  class="wxParse-{{item.tag}}">
+                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+            </view>
+            
+        </block>
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}">                 <image src="{{item.attr.src}}" mode="aspectFit"></image>             </view>
+            <view class="wxParse-{{item.tag}}">                 
+                <image src="{{item.attr.src}}" mode="aspectFit"></image>             
+            </view>
         </block>
 
         <block wx:else>
