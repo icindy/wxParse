@@ -55,7 +55,7 @@
 ```
 var WxParse = require('你的路径/wxParse/wxParse.js');
 ```
-* 设置对应data值数组，如`wxParseData`,并设置
+* 设置对应data值数组`wxParseData`(必须使用wxParseData),并设置
 
 
 ```
