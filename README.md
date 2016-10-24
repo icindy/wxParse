@@ -128,3 +128,7 @@ onLoad: function () {
 垂直微信小程序开发交流社区
 
 ![微信小程序logo](http://weappdev.com/uploads/default/original/1X/9156b32bd04323f35d0957796f126b8a54595c97.png)
+
+## Time
+
+ * 2016.10.24 Alpha0.1 发布
