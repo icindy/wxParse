@@ -46,7 +46,7 @@
 
         <!--video类型-->
         <block wx:elif="{{item.tag == 'video'}}">
-
+            <!--增加video标签支持，并循环添加-->
             <view  class="wxParse-{{item.tag}}">
                 <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
             </view>

@@ -35,7 +35,7 @@
 .wxParse-sup{vertical-align:super}
 .wxParse-s,.wxParse-strike,.wxParse-del{text-decoration:line-through}
 /*wxparse-自定义个性化的css样式*/
-
+/*增加video的css样式*/
 .wxParse-video{
     text-align: center;
     margin: 10px 0;
