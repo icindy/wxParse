@@ -46,9 +46,7 @@
 ```
 <import src="你的路径/wxParse/wxParse.wxml"/>
 <view class="wxParse">
-    <block wx:for="{{wxParseData}}">
-        <template is="wxParse" data="{{item}}"/>
-    </block>
+<template is="wxParse" data="{{wxParseData}}"/>
 </view>
 ```
 * 在对应的js中引入`wxParse.js`文件

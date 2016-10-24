@@ -1,6 +1,5 @@
 
-<import src="../../wxParse/wxParse.wxml"/>
-
+<import src="../../wxParse/wxParse.wxml"/> 
 <view class="wxParse">
     <template is="wxParse" data="{{wxParseData}}"/>
 </view>
