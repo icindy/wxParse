@@ -109,6 +109,12 @@ onLoad: function () {
 * 自定义层级解析
 * 自定义样式表
 
+## 示例
+
+＊ cnode版wxParse使用
+>github地址:[https://github.com/icindy/wechat-webapp-cnode](https://github.com/icindy/wechat-webapp-cnode)
+
+
 ## TODO
 
 * 添加更多标签的解析
