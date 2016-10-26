@@ -26,6 +26,7 @@ Page({
     that.setData({
       wxParseData:WxParse('html',html)
     })
+
   }
 })
 

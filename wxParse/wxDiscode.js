@@ -99,10 +99,20 @@ function strGreeceDiscode(str){
     return str;
 }
 
+// 
+
+function strcharacterDiscode(str){
+    str = str.replace(/&nbsp;/g, ' ');
+    str = str.replace(/&quot;/g, '"');
+    str = str.replace(/&amp;/g, '&');
+    str = str.replace(/&lt;/g, '<');
+    str = str.replace(/&gt;/g, '>');
+
+    return str;
+}
+
 // HTML 支持的其他实体
 function strOtherDiscode(str){
-
-
     str = str.replace(/&OElig;/g, 'Œ');
     str = str.replace(/&oelig;/g, 'œ');
     str = str.replace(/&Scaron;/g, 'Š');
@@ -163,6 +173,7 @@ function strOtherDiscode(str){
 function strDiscode(str){
     str = strNumDiscode(str);
     str = strGreeceDiscode(str);
+    str = strcharacterDiscode(str);
     str = strOtherDiscode(str);
     return str;
 }
