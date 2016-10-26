@@ -60,6 +60,15 @@
             </view>
         </block>
 
+        <!--code类型-->
+        <!--<block wx:elif="{{item.tag == 'code'}}">
+            <view class="wxParse-{{item.tag}}">
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                    <template is="codeParse" data="{{item}}"/>
+                </block>
+            </view>
+        </block>-->
+
         <block wx:else>
             <view  class="wxParse-{{item.tag}}">
                 <block  wx:for="{{item.child}}" wx:for-item="item">       
@@ -79,6 +88,21 @@
         </block>
     </block>
 
+</template>
+
+
+<template name="codeParse">
+
+    <block wx:if="{{item.node == 'element'}}">
+        {{item.tag}}hello/{{item.tag}}
+    </block>
+    <!--判断是否是文本节点-->
+    <block wx:elif="{{item.node == 'text'}}">
+        <!--如果是，直接进行-->
+        <block wx:if="{{item.text != '' || item.text != ' ' || item.text != '  ' || item.text != '\n\n'}}">
+            <text>{{item.text}}</text>
+        </block>
+    </block>
 </template>
 
 <template name="wxParse1">
