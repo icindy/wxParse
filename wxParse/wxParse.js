@@ -1,6 +1,7 @@
 /*! showdown 19-08-2016 */
 var showdown = require('showdown.js');
 var HtmlToJson = require('html2json.js');
+var wxDiscode = require('wxDiscode.js');
 //type 'json','html','markdown'/'md'
 
 function wxParse(type,data){
@@ -13,6 +14,7 @@ function wxParse(type,data){
                               //你的字符串
     data = data.replace(/\r\n/g,"")  
     data = data.replace(/\n/g,""); 
+    data = wxDiscode.strDiscode(data);
     
     // console.log(data)
     var json = HtmlToJson(data);
@@ -21,6 +23,9 @@ function wxParse(type,data){
   }else if(type == 'md' || type == 'markdown'){
     var converter = new showdown.Converter();
     var html      = converter.makeHtml(data);
+
+    html = wxDiscode.strDiscode(html);
+
     // console.log(html);
     html = html.replace(/\r\n/g,"")  
     html = html.replace(/\n/g,""); 
