@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/markdown/markdown",
-    "pages/net/net",
+    "pages/zhihu/zhihu",
+    "pages/cnode/cnode",
     "pages/logs/logs"
   ],
   "window":{
@@ -27,10 +28,15 @@
       "selectedIconPath": "image/icon_API_HL.png",
       "text": "markdown"
     }, {
-      "pagePath": "pages/net/net",
+      "pagePath": "pages/zhihu/zhihu",
       "iconPath": "image/icon_API.png",
       "selectedIconPath": "image/icon_API_HL.png",
-      "text": "html/net"
+      "text": "zhihu"
+    }, {
+      "pagePath": "pages/cnode/cnode",
+      "iconPath": "image/icon_API.png",
+      "selectedIconPath": "image/icon_API_HL.png",
+      "text": "cnode"
     }]
   }
 }

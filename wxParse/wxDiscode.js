@@ -171,11 +171,18 @@ function strOtherDiscode(str){
     return str;
 }
 
+function strMoreDiscode(str){
+    str = str.replace(/\r\n/g,"");  
+    str = str.replace(/\n\n/g,"\n");
+    return str;
+}
+
 function strDiscode(str){
     str = strNumDiscode(str);
     str = strGreeceDiscode(str);
     str = strcharacterDiscode(str);
     str = strOtherDiscode(str);
+    str = strMoreDiscode(str);
     return str;
 }
 
