@@ -70,7 +70,7 @@ view{
     border-left: 3px solid #dbdbdb;
 }
 
-.wxParse-code{
+.wxParse-code,.wxParse-wxxxcode-style{
     text-indent:0;
     border-color:#000;
     border-style:dashed;
@@ -85,6 +85,8 @@ view{
     color:#000;
     overflow: hidden;
 }
+
+
 
 .wxParse-ul{
     margin: 20rpx 10rpx;

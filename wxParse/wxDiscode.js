@@ -174,6 +174,7 @@ function strOtherDiscode(str){
 function strMoreDiscode(str){
     str = str.replace(/\r\n/g,"");  
     str = str.replace(/\n\n/g,"\n");
+    str = str.replace(/code/g,"wxxxcode-style");
     return str;
 }
 

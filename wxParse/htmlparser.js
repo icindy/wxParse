@@ -30,7 +30,7 @@
 	var fillAttrs = makeMap("checked,compact,declare,defer,disabled,ismap,multiple,nohref,noresize,noshade,nowrap,readonly,selected");
 
 	// Special Elements (can contain anything)
-	var special = makeMap("script,style");
+	var special = makeMap("wxxxcode-style,script,style,view,scroll-view,block");
 
 	function HTMLParser(html, handler) {
 		var index, chars, match, stack = [], last = html;
@@ -87,14 +87,29 @@
 				}
 
 			} else {
+				
+
+				// if(special[stack.last()]){
+				// 	console.log("code");
+				// }else{
+				// 	html = html.replace(new RegExp("([\\s\\S]*?)<\/" + stack.last() + "[^>]*>"), function (all, text) {
+				// 		text = text.replace(/<!--([\s\S]*?)-->|<!\[CDATA\[([\s\S]*?)]]>/g, "$1$2");
+				// 		if (handler.chars)
+				// 			handler.chars(text);
+
+				// 		return "";
+				// 	});
+				// }
+
 				html = html.replace(new RegExp("([\\s\\S]*?)<\/" + stack.last() + "[^>]*>"), function (all, text) {
-					text = text.replace(/<!--([\s\S]*?)-->|<!\[CDATA\[([\s\S]*?)]]>/g, "$1$2");
-					if (handler.chars)
-						handler.chars(text);
+						text = text.replace(/<!--([\s\S]*?)-->|<!\[CDATA\[([\s\S]*?)]]>/g, "$1$2");
+						if (handler.chars)
+							handler.chars(text);
 
-					return "";
-				});
+						return "";
+					});
 
+				
 				parseEndTag("", stack.last());
 			}
 
