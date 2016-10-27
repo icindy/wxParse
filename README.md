@@ -4,7 +4,11 @@
 
 > 垂直微信小程序开发交流社区
 
-# 效果GIF(加载较慢，请稍候)
+## 目录
+
+ 
+
+## 效果GIF(加载较慢，请稍候)
 
 ![wxParse.gif](screenshoot/wxParse.gif)
 
@@ -14,7 +18,7 @@
 
 ## 现状
 
-`版本号: Alpha0.1`-目前还不太适合直接使用
+`版本号: version0.1`-目前还不太适合直接使用
 
 > 目前项目不属于完整版，只是大概完成了基础的构思项目，能够解析基本的html，基础的markdown。
 **希望大家能够发现问题，提交问题，也可以foke提交您的修改代码**
@@ -54,7 +58,6 @@
 var WxParse = require('你的路径/wxParse/wxParse.js');
 ```
 * 设置对应data值数组`wxParseData`(必须使用wxParseData),并设置
-
 
 ```
 
@@ -97,7 +100,6 @@ onLoad: function () {
 
 ```
 
-
 ## 功能列表
 
 * 动态加载代码
@@ -109,16 +111,14 @@ onLoad: function () {
 
 ## 示例
 
-＊ cnode版wxParse使用
+* cnode版wxParse使用
 >github地址:[https://github.com/icindy/wechat-webapp-cnode](https://github.com/icindy/wechat-webapp-cnode)
 
 
-## TODO
+## 流程图
 
-* 添加更多标签的解析
-* 去重与定制样式
-* 解决组件中的问题
-* 增加多数据支持
+![wxParse流程图](screenshoot/wxparse.png)
+
 
 ## 第三方引用
 
@@ -137,3 +137,8 @@ onLoad: function () {
 ## Time
 
  * 2016.10.24 Alpha0.1 发布
+ * 2016.10.25 video 支持
+ * 2016.10.26 li 支持
+ * 2016.10.26 a 支持
+ * 2016.10.26 code 支持
+ * 2016.10.26 version0.1发布
