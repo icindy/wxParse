@@ -4,9 +4,20 @@
 
 > 垂直微信小程序开发交流社区
 
+`版本号: version0.1`
+
 ## 目录
 
- 
+- [现状](#现状)
+- [组成](#组成)
+- [使用方法](#使用方法)
+- [功能列表](#功能列表)
+- [示例](#示例)
+- [流程图](#流程图)
+- [相关讲解文章](#相关讲解文章)
+- [第三方引用](#第三方引用)
+- [开发信息](#开发信息)
+- [Time](#Time)
 
 ## 效果GIF(加载较慢，请稍候)
 
@@ -117,8 +128,12 @@ onLoad: function () {
 
 ## 流程图
 
-![wxParse流程图](screenshoot/wxparse.png)
+![wxParse流程图](screenshoot/wxParse.png)
 
+## 相关讲解文章
+
+* [wxDiscode－微信小程序特殊字符转义符转化工具类](http://weappdev.com/t/wxdiscode/203)
+* [微信小程序组件wxParse中的模版template使用 既然不能循环那就使用笨办法](http://weappdev.com/t/wxparse-template/192)
 
 ## 第三方引用
 
