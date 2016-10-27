@@ -14,7 +14,9 @@
     margin: 0 5px;
     font-family:Courier, Calibri,"宋体";
 }
-
+view{
+    word-break:break-all; overflow:auto;
+}
 /*//标题 */
 .wxParse-div{margin: 0;padding: 0;}
 .wxParse-h1{ font-size:2em; margin: .67em 0 }
@@ -36,6 +38,13 @@
 .wxParse-s,.wxParse-strike,.wxParse-del{text-decoration:line-through}
 /*wxparse-自定义个性化的css样式*/
 /*增加video的css样式*/
+
+.wxParse-a{
+    color: deepskyblue;
+    word-break:break-all;
+    overflow:auto;
+}
+
 .wxParse-video{
     text-align: center;
     margin: 10px 0;

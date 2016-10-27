@@ -44,6 +44,17 @@
             </view>
         </block>
 
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse1" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
+            </view>
+        </block>
+
         <!--video类型-->
         <block wx:elif="{{item.tag == 'video'}}">
             <!--增加video标签支持，并循环添加-->
@@ -133,6 +144,17 @@
             </view>
         </block>
 
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse2" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
+            </view>
+        </block>
+
         <!--video类型-->
         <block wx:elif="{{item.tag == 'video'}}">
 
@@ -181,7 +203,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -194,6 +216,18 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse3" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
@@ -245,7 +279,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--a类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -258,6 +292,17 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse4" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
@@ -309,7 +354,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -322,6 +367,17 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse5" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
@@ -373,7 +429,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -386,6 +442,17 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse6" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
@@ -437,7 +504,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -450,6 +517,17 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse7" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
@@ -502,7 +580,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -515,6 +593,17 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse8" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
@@ -568,7 +657,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -581,6 +670,17 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse9" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
@@ -634,7 +734,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -647,6 +747,17 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse10" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
@@ -699,7 +810,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -712,6 +823,17 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse11" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
@@ -764,7 +886,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -777,6 +899,17 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse12" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
@@ -828,7 +961,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -841,6 +974,17 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse13" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
@@ -893,7 +1037,7 @@
                 </block>
              </button>
         </block>
-        <!--img类型-->
+        <!--li类型-->
         <block wx:elif="{{item.tag == 'li'}}">
             <view class="wxParse-li">
                 <view class="wxParse-li-inner">
@@ -906,6 +1050,17 @@
                         </block>
                     </view>
                 </view>
+            </view>
+        </block>
+
+        <!--a类型-->
+        <block wx:elif="{{item.tag == 'a'}}">
+            <view class="wxParse-{{item.tag}}">
+                
+                <block wx:for="{{item.child}}" wx:for-item="item">
+                        <template is="wxParse14" data="{{item}}"/>
+                </block>
+                <text wx:if="{{item.attr.href}">({{item.attr.href}})</text>
             </view>
         </block>
 
