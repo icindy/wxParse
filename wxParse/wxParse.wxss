@@ -17,6 +17,11 @@
 view{
     word-break:break-all; overflow:auto;
 }
+.wxParse-inline{
+    display:inline-flex; 
+    margin: 0;
+    padding: 0;
+}
 /*//标题 */
 .wxParse-div{margin: 0;padding: 0;}
 .wxParse-h1{ font-size:2em; margin: .67em 0 }
@@ -86,11 +91,8 @@ view{
 }
 
 .wxParse-img{
-    padding: 2px;
     background-color: #efefef;
-    margin: 3px;
     overflow: hidden;
-    text-align: center;
 }
 
 .wxParse-blockquote {

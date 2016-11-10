@@ -1,12 +1,11 @@
-<template name="wxParse8">
-    <!--<template is="wxParse9" data="{{item}}" />-->
+<template name="wxParse9">
+    <!--<template is="wxParse10" data="{{item}}" />-->
     <!--判断是否是标签节点-->
     <block wx:if="{{item.node == 'element'}}">
-        
         <block wx:if="{{item.tag == 'button'}}">
             <button type="default" size="mini" >
                 <block wx:for="{{item.child}}" wx:for-item="item" wx:key="">
-                    <template is="wxParse9" data="{{item}}"/>
+                    <template is="wxParse10" data="{{item}}"/>
                 </block>
              </button>
         </block>
@@ -19,7 +18,7 @@
                     </view>
                     <view class="wxParse-li-text">
                         <block wx:for="{{item.child}}" wx:for-item="item" wx:key="">
-                            <template is="wxParse9" data="{{item}}"/>
+                            <template is="wxParse10" data="{{item}}"/>
                         </block>
                     </view>
                 </view>
@@ -28,11 +27,7 @@
 
         <!--video类型-->
         <block wx:elif="{{item.tag == 'video'}}">
-            <!--增加video标签支持，并循环添加-->
-            <view class="wxParse-{{item.tag}}" style="{{item.attr.style}}">
-                <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
-            </view>
-            
+            <template is="wxParseVideo" data="{{item}}"/>  
         </block>
 
         <!--img类型-->
@@ -44,28 +39,25 @@
 
         <!--a类型-->
         <block wx:elif="{{item.tag == 'a'}}">
-            <text class="wxParse-{{item.tag}}"  style="{{item.attr.style}}">
-                {{item.child[0].text}}({{item.attr.href}})
-            </text>
+            <template is="wxParseA" data="{{item}}"/> 
         </block>
+
         
         <!--其他块级标签-->
         <block wx:elif="{{item.tagType == 'block'}}">
             <view class="wxParse-{{item.tag}}" style="{{item.attr.style}}">
                 <block  wx:for="{{item.child}}" wx:for-item="item" wx:key="">       
-                    <template is="wxParse9" data="{{item}}"/>                 
+                    <template is="wxParse10" data="{{item}}"/>                 
                 </block>
             </view>
         </block>
 
         <!--内联标签-->
-        <block wx:else>
-            <text class="wxParse-{{item.tag}}" style="{{item.attr.style}}">
-                <block  wx:for="{{item.child}}" wx:for-item="item" wx:key="">       
-                    <template is="wxParse9" data="{{item}}"/>                 
-                </block>
-            </text>
-        </block>
+        <text wx:else class="wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.attr.style}}">
+            <block  wx:for="{{item.child}}" wx:for-item="item" wx:key="">       
+                <template is="wxParse10" data="{{item}}"/>                 
+            </block>
+        </text>
 
     </block>
 

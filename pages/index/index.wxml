@@ -1,6 +1,15 @@
 
 <import src="../../wxParse/wxParse.wxml"/> 
-ggggg<text class="wxParse-strong">hhhhhhh</text>
+<image bindtap="hhhh" src="https://dn-cnode.qbox.me/FjfPMJYFAbyV1-OM-CcCC5Wk2tmY" />
+<block>
+    <text>hhhh1</text>
+</block>
+
+<block>
+    <text>hhhh2</text>
+</block>
+
+<text class="wxParse-strong"><text>hhhhhhhfdadf</text></text>
 <view class="wxParse">
     <template is="wxParse" data="{{wxParseData}}"/>
 </view>
