@@ -1,6 +1,4 @@
-
 <import src="../../wxParse/wxParse.wxml"/> 
-<image class="wxParse-{{item.tag}}"  style="{{item.attr.style}}" bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit" />
 <view class="wxParse">
     <template is="wxParse" data="{{wxParseData}}"/>
 </view>

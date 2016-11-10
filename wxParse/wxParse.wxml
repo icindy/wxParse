@@ -24,7 +24,7 @@
     </text>
 </template>
 <template name="wxParseImg">
-    <image class="wxParse-{{item.tag}}"  style="{{item.attr.style}}" bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit" />
+    <image class="wxParse-{{item.tag}}" bind-idx="{{item.imgIndex}}" bindload="wxParseImageLoad"  style="width:{{item.width}}px;height:{{item.height}}px;{{item.attr.style}}" bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit" />
 </template>
 
 <!--入口模版-->

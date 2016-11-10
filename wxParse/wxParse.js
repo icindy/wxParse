@@ -13,6 +13,7 @@
 var showdown = require('showdown.js');
 var HtmlToJson = require('html2json.js');
 var wxDiscode = require('wxDiscode.js');
+var WxAutoImage = require('WxAutoImage.js');
 //type 'json','html','markdown'/'md'
 var wxImageArrayObj = {};
 var imgUrlArr = [];
@@ -36,11 +37,11 @@ function wxParse(type,data,target){
 	  console.log(JSON.stringify(json, ' ', ' '));
     wxParseData = json.child;
   }
-  var wxImageArray = HtmlToJson.wxImageArray();
+  var wxParseImageObjArray = HtmlToJson.wxImageArray();
   imgUrlArr = [];
 
-  for(var i=0;i<wxImageArray.length;i++){
-    var node = wxImageArray[i];
+  for(var i=0;i<wxParseImageObjArray.length;i++){
+    var node = wxParseImageObjArray[i];
     var imgUrl = node.attr.src;
     imgUrl = wxDiscode.urlToHttpUrl(imgUrl,"http");
     imgUrlArr.push(imgUrl);
@@ -48,7 +49,8 @@ function wxParse(type,data,target){
   //更新数据
   that.setData({
     wxParseData:wxParseData,
-    wxParseImgArray: imgUrlArr
+    wxParseImgArray: imgUrlArr,
+    wxParseImageObjArray:wxParseImageObjArray 
   })
   // return wxParseData;
 }
