@@ -1,5 +1,6 @@
 
 <import src="../../wxParse/wxParse.wxml"/> 
+ggggg<text class="wxParse-strong">hhhhhhh</text>
 <view class="wxParse">
     <template is="wxParse" data="{{wxParseData}}"/>
 </view>

@@ -37,6 +37,14 @@ function wxParse(type,data){
 
   return wxParseData;
 }
+
+function wxParseImgTap(e){
+    wx.previewImage({
+      current: '', // 当前显示图片的http链接
+      urls: [e.target.dataset.src] // 需要预览的图片http链接列表
+    })
+}
+
 module.exports = wxParse;
 
 
