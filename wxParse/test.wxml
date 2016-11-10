@@ -1,6 +1,7 @@
 <template name="wxParse9">
     <!--<template is="wxParse10" data="{{item}}" />-->
     <!--判断是否是标签节点-->
+    
     <block wx:if="{{item.node == 'element'}}">
         <block wx:if="{{item.tag == 'button'}}">
             <button type="default" size="mini" >
@@ -32,9 +33,7 @@
 
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}"  style="{{item.attr.style}}">
-                <image bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit"></image>
-            </view>
+            <template is="wxParseImg" data="{{item}}"/>
         </block>
 
         <!--a类型-->

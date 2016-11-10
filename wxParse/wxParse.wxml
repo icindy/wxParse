@@ -12,7 +12,6 @@
 
  <!--基础元素-->
 <template name="wxParseVideo">
-    {{item.text}}
     <!--增加video标签支持，并循环添加-->
     <view class="wxParse-{{item.tag}}" style="{{item.attr.style}}">
         <video class="wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
@@ -25,7 +24,7 @@
     </text>
 </template>
 <template name="wxParseImg">
-    <image class="wxParse-{{item.tag}}"  style="{{item.attr.style}}" bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit"></image>
+    <image class="wxParse-{{item.tag}}"  style="{{item.attr.style}}" bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit" />
 </template>
 
 <!--入口模版-->
@@ -112,6 +111,7 @@
 <template name="wxParse1">
     <!--<template is="wxParse2" data="{{item}}" />-->
     <!--判断是否是标签节点-->
+    
     <block wx:if="{{item.node == 'element'}}">
         <block wx:if="{{item.tag == 'button'}}">
             <button type="default" size="mini" >
@@ -143,9 +143,7 @@
 
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}"  style="{{item.attr.style}}">
-                <image bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit"></image>
-            </view>
+            <template is="wxParseImg" data="{{item}}"/>
         </block>
 
         <!--a类型-->
@@ -180,10 +178,10 @@
 
 </template>
 
-
 <template name="wxParse2">
     <!--<template is="wxParse3" data="{{item}}" />-->
     <!--判断是否是标签节点-->
+    
     <block wx:if="{{item.node == 'element'}}">
         <block wx:if="{{item.tag == 'button'}}">
             <button type="default" size="mini" >
@@ -215,9 +213,7 @@
 
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}"  style="{{item.attr.style}}">
-                <image bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit"></image>
-            </view>
+            <template is="wxParseImg" data="{{item}}"/>
         </block>
 
         <!--a类型-->
@@ -255,6 +251,7 @@
 <template name="wxParse3">
     <!--<template is="wxParse4" data="{{item}}" />-->
     <!--判断是否是标签节点-->
+    
     <block wx:if="{{item.node == 'element'}}">
         <block wx:if="{{item.tag == 'button'}}">
             <button type="default" size="mini" >
@@ -286,9 +283,7 @@
 
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}"  style="{{item.attr.style}}">
-                <image bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit"></image>
-            </view>
+            <template is="wxParseImg" data="{{item}}"/>
         </block>
 
         <!--a类型-->
@@ -326,6 +321,7 @@
 <template name="wxParse4">
     <!--<template is="wxParse5" data="{{item}}" />-->
     <!--判断是否是标签节点-->
+    
     <block wx:if="{{item.node == 'element'}}">
         <block wx:if="{{item.tag == 'button'}}">
             <button type="default" size="mini" >
@@ -357,9 +353,7 @@
 
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}"  style="{{item.attr.style}}">
-                <image bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit"></image>
-            </view>
+            <template is="wxParseImg" data="{{item}}"/>
         </block>
 
         <!--a类型-->
@@ -397,6 +391,7 @@
 <template name="wxParse5">
     <!--<template is="wxParse6" data="{{item}}" />-->
     <!--判断是否是标签节点-->
+    
     <block wx:if="{{item.node == 'element'}}">
         <block wx:if="{{item.tag == 'button'}}">
             <button type="default" size="mini" >
@@ -428,9 +423,7 @@
 
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}"  style="{{item.attr.style}}">
-                <image bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit"></image>
-            </view>
+            <template is="wxParseImg" data="{{item}}"/>
         </block>
 
         <!--a类型-->
@@ -468,6 +461,7 @@
 <template name="wxParse6">
     <!--<template is="wxParse7" data="{{item}}" />-->
     <!--判断是否是标签节点-->
+    
     <block wx:if="{{item.node == 'element'}}">
         <block wx:if="{{item.tag == 'button'}}">
             <button type="default" size="mini" >
@@ -499,9 +493,7 @@
 
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}"  style="{{item.attr.style}}">
-                <image bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit"></image>
-            </view>
+            <template is="wxParseImg" data="{{item}}"/>
         </block>
 
         <!--a类型-->
@@ -539,6 +531,7 @@
 <template name="wxParse7">
     <!--<template is="wxParse8" data="{{item}}" />-->
     <!--判断是否是标签节点-->
+    
     <block wx:if="{{item.node == 'element'}}">
         <block wx:if="{{item.tag == 'button'}}">
             <button type="default" size="mini" >
@@ -570,9 +563,7 @@
 
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}"  style="{{item.attr.style}}">
-                <image bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit"></image>
-            </view>
+            <template is="wxParseImg" data="{{item}}"/>
         </block>
 
         <!--a类型-->
@@ -610,6 +601,7 @@
 <template name="wxParse8">
     <!--<template is="wxParse9" data="{{item}}" />-->
     <!--判断是否是标签节点-->
+    
     <block wx:if="{{item.node == 'element'}}">
         <block wx:if="{{item.tag == 'button'}}">
             <button type="default" size="mini" >
@@ -641,9 +633,7 @@
 
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}"  style="{{item.attr.style}}">
-                <image bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit"></image>
-            </view>
+            <template is="wxParseImg" data="{{item}}"/>
         </block>
 
         <!--a类型-->
@@ -681,6 +671,7 @@
 <template name="wxParse9">
     <!--<template is="wxParse10" data="{{item}}" />-->
     <!--判断是否是标签节点-->
+    
     <block wx:if="{{item.node == 'element'}}">
         <block wx:if="{{item.tag == 'button'}}">
             <button type="default" size="mini" >
@@ -712,9 +703,7 @@
 
         <!--img类型-->
         <block wx:elif="{{item.tag == 'img'}}">
-            <view class="wxParse-{{item.tag}}"  style="{{item.attr.style}}">
-                <image bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit"></image>
-            </view>
+            <template is="wxParseImg" data="{{item}}"/>
         </block>
 
         <!--a类型-->
@@ -748,6 +737,5 @@
     </block>
 
 </template>
-
 
 

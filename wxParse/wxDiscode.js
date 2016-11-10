@@ -186,7 +186,17 @@ function strDiscode(str){
     str = strMoreDiscode(str);
     return str;
 }
+function urlToHttpUrl(url,rep){
+    
+    var patt1 = new RegExp("^//");
+    var result = patt1.test(url);
+    if(result){
+        url = rep+":"+url;
+    }
+    return  url;
+}
 
 module.exports = {
-    strDiscode:strDiscode
+    strDiscode:strDiscode,
+    urlToHttpUrl:urlToHttpUrl
 }

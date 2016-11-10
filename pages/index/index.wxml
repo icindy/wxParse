@@ -1,15 +1,6 @@
 
 <import src="../../wxParse/wxParse.wxml"/> 
-<image bindtap="hhhh" src="https://dn-cnode.qbox.me/FjfPMJYFAbyV1-OM-CcCC5Wk2tmY" />
-<block>
-    <text>hhhh1</text>
-</block>
-
-<block>
-    <text>hhhh2</text>
-</block>
-
-<text class="wxParse-strong"><text>hhhhhhhfdadf</text></text>
+<image class="wxParse-{{item.tag}}"  style="{{item.attr.style}}" bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit" />
 <view class="wxParse">
     <template is="wxParse" data="{{wxParseData}}"/>
 </view>

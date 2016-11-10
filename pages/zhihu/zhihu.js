@@ -25,15 +25,20 @@ Page({
 
             
             console.log(res.data.body);
-            that.setData( {
-                wxParseData:WxParse('html',res.data.body)
-            });
+            // that.setData( {
+            //     wxParseData:WxParse('html',res.data.body)
+            // });
+            WxParse.wxParse('html',res.data.body,that)
 
         });
     //更新数据
     // that.setData({
     //   wxParseData:WxParse('html',html)
     // })
+  },
+  wxParseImgTap: function(e){
+    var that = this
+    WxParse.wxParseImgTap(e,that)
   }
 })
 

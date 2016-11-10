@@ -13,10 +13,15 @@ Page({
     wx.request({
       url: Api.getTopicByID(id, { mdrender: false }),
       success: function (res) {
-        self.setData({
-          wxParseData: WxParse('md',res.data.data.content)
-        });
+        // self.setData({
+        //   wxParseData: WxParse('md',res.data.data.content)
+        // });
+        WxParse.wxParse('md',res.data.data.content,self)
       }
     });
+  },
+  wxParseImgTap: function(e){
+    var that = this
+    WxParse.wxParseImgTap(e,that)
   }
 })
