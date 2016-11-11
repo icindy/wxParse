@@ -8,12 +8,12 @@
  * for: 微信小程序富文本解析
  * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
  */
-  var wxDiscode = require('wxDiscode.js');
+
   var __wxImageArray=[];
+  var wxDiscode = require('wxDiscode.js');
   var HTMLParser = require('htmlparser.js');
   // Empty Elements - HTML 5
 	var empty = makeMap("area,base,basefont,br,col,frame,hr,img,input,link,meta,param,embed,command,keygen,source,track,wbr");
-
 	// Block Elements - HTML 5
 	var block = makeMap("a,code,address,article,applet,aside,audio,blockquote,button,canvas,center,dd,del,dir,div,dl,dt,fieldset,figcaption,figure,footer,form,frameset,h1,h2,h3,h4,h5,h6,header,hgroup,hr,iframe,ins,isindex,li,map,menu,noframes,noscript,object,ol,output,p,pre,section,script,table,tbody,td,tfoot,th,thead,tr,ul,video");
 
@@ -137,6 +137,7 @@
           var imgUrl = node.attr.src;
           imgUrl = wxDiscode.urlToHttpUrl(imgUrl,"http");
           node.attr.src = imgUrl;
+          
           wx.getImageInfo({
             src: imgUrl,
             success: function (res) {
@@ -146,7 +147,11 @@
 
               node.width = recal.imageWidth;
               node.height = recal.imageheight;
-              if (unary) {
+              
+              
+            }
+          })
+          if (unary) {
                 // if this tag dosen't have end tag
                 // like <img src="hoge.png"/>
                 // add to parents
@@ -158,8 +163,7 @@
               } else {
                 bufArray.unshift(node);
               }
-            }
-          })
+          
         }else{
           if (unary) {
             // if this tag dosen't have end tag

@@ -140,7 +140,6 @@ view{
     display: inline-flex;
     width: 5px;
     height: 5px;
-    /*border-radius: 50%;*/
     background-color: #333;
     margin-right: 5px;
 }

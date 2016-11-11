@@ -155,8 +155,10 @@
 					});
 				});
 
-				if (handler.start)
+				if (handler.start){
 					handler.start(tagName, attrs, unary);
+				}
+					
 			}
 		}
 

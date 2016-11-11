@@ -53,6 +53,7 @@ function wxParse(type,data,target){
     wxParseImageObjArray:wxParseImageObjArray 
   })
   // return wxParseData;
+
 }
 
 function wxParseImgTap(e,that){
