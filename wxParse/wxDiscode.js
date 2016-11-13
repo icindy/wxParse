@@ -95,7 +95,7 @@ function strGreeceDiscode(str){
     str = str.replace(/&thetasym;/g, 'ϑ');
     str = str.replace(/&upsih;/g, 'ϒ');
     str = str.replace(/&piv;/g, 'ϖ');
-
+    str = str.replace(/&middot;/g, '·');
     return str;
 }
 
@@ -186,7 +186,17 @@ function strDiscode(str){
     str = strMoreDiscode(str);
     return str;
 }
+function urlToHttpUrl(url,rep){
+    
+    var patt1 = new RegExp("^//");
+    var result = patt1.test(url);
+    if(result){
+        url = rep+":"+url;
+    }
+    return  url;
+}
 
 module.exports = {
-    strDiscode:strDiscode
+    strDiscode:strDiscode,
+    urlToHttpUrl:urlToHttpUrl
 }

@@ -30,8 +30,13 @@ Page({
 
     var that = this
     //更新数据
-    that.setData({
-      wxParseData:WxParse('md',text)
-    })
+    // that.setData({
+    //   wxParseData:WxParse('md',text)
+    // })
+    WxParse.wxParse('md',text,that)
+  },
+  wxParseImgTap: function(e){
+    var that = this
+    WxParse.wxParseImgTap(e,that)
   }
 })

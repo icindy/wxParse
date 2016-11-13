@@ -6,17 +6,22 @@ Page({
     wxParseData:[]
   },
   onLoad: function () {
-    this.fetchData("57ea257b3670ca3f44c5beb6");
+    this.fetchData("580ddc2eeae2a24f34e67e69");
   },
   fetchData: function (id) {
     var self = this;
     wx.request({
       url: Api.getTopicByID(id, { mdrender: false }),
       success: function (res) {
-        self.setData({
-          wxParseData: WxParse('md',res.data.data.content)
-        });
+        // self.setData({
+        //   wxParseData: WxParse('md',res.data.data.content)
+        // });
+        WxParse.wxParse('md',res.data.data.content,self)
       }
     });
+  },
+  wxParseImgTap: function(e){
+    var that = this
+    WxParse.wxParseImgTap(e,that)
   }
 })
