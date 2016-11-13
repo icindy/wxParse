@@ -18,7 +18,7 @@ view{
     word-break:break-all; overflow:auto;
 }
 .wxParse-inline{
-    display:inline-flex; 
+    display: inline-block; 
     margin: 0;
     padding: 0;
 }
@@ -93,8 +93,8 @@ view{
 .wxParse-img{
     background-color: #efefef;
     overflow: hidden;
-    width:0;
-    height: 0;
+    width:40px;
+    height: 40px;
 }
 
 .wxParse-blockquote {
@@ -163,4 +163,17 @@ view{
     margin-right: 5px;
 }
 
+/*.wxParse-table{
+    width: 100%;
+    height: 400px;
+}
+.wxParse-thead,.wxParse-tfoot,.wxParse-tr{
+    display: flex;
+    flex-direction: row;
+}
+.wxParse-th,.wxParse-td{
+    display: flex;
+    width: 580px;
+    overflow: auto;
+}*/
 

@@ -76,7 +76,11 @@
           node.attr = attrs.reduce(function(pre, attr) {
             var name = attr.name;
             var value = attr.value;
-
+            if(name == 'class'){
+              console.dir(value);
+              //  value = value.join("")
+              node.classStr = value;
+            }
             // has multi attibutes
             // make it array of attribute
             if (value.match(/ /)) {
@@ -101,6 +105,7 @@
             return pre;
           }, {});
         }
+
 
         if(node.tag == 'img'){
           node.imgIndex = __wxImageArray.length;
