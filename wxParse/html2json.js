@@ -47,35 +47,6 @@
       .replace(/<!DOCTYPE.*\>\n/, '');
   }
 
-  function wxAutoImageCal(originalWidth,originalHeight){
-    //获取图片的原始长宽
-    var windowWidth = 0,windowHeight = 0;
-    var autoWidth = 0,autoHeight = 0;
-    var results= {};
-    wx.getSystemInfo({
-      success: function(res) {
-        console.dir(res);
-        windowWidth = res.windowWidth;
-        windowHeight = res.windowHeight;
-        //判断按照那种方式进行缩放
-        console.log("windowWidth"+windowWidth);
-        if(originalWidth > windowWidth){//在图片width大于手机屏幕width时候
-          autoWidth = windowWidth;
-          console.log("autoWidth"+autoWidth);
-          autoHeight = (autoWidth*originalHeight)/originalWidth;
-          console.log("autoHeight"+autoHeight);
-          results.imageWidth = autoWidth;
-          results.imageheight = autoHeight;
-        }else{//否则展示原来的数据
-          results.imageWidth = originalWidth;
-          results.imageheight = originalHeight;
-        }
-      }
-    })
-
-    return results;
-
-  }
 
   function html2json(html) {
     __wxImageArray = [];
@@ -137,20 +108,6 @@
           var imgUrl = node.attr.src;
           imgUrl = wxDiscode.urlToHttpUrl(imgUrl,"http");
           node.attr.src = imgUrl;
-          
-          wx.getImageInfo({
-            src: imgUrl,
-            success: function (res) {
-              console.log(res.width);
-              console.log(res.height);
-              var recal = wxAutoImageCal(res.width,res.height);
-
-              node.width = recal.imageWidth;
-              node.height = recal.imageheight;
-              
-              
-            }
-          })
           if (unary) {
                 // if this tag dosen't have end tag
                 // like <img src="hoge.png"/>
