@@ -59,8 +59,6 @@ function wxParse(type,data,target){
     wxParseImageObjArray:wxParseImageObjArray 
   })
   calImageInfo(0,that);
-  parseImageWh(wxParseImageObjArray,that);
-  // return wxParseData;
 }
 
 // 图片宽高获取
@@ -74,6 +72,9 @@ function parseImageWh(arr,that){
 }
 
 function calImageInfo(idx,that){
+  if(that.data.wxParseImageObjArray.length == 0){
+      return;
+  }
   var temWxParseImageObjArray = that.data.wxParseImageObjArray;
   var imgUrl = temWxParseImageObjArray[idx].attr.src;
   wx.getImageInfo({
