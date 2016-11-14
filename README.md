@@ -93,6 +93,10 @@ wxParseImgTap: function(e){
 [微信小程序开发论坛](http://weappdev.com)
 垂直微信小程序开发交流社区
 
+## 合作qq群
+
+ * 欢迎加入微信小程序开发QQ群 511389428
+
 ## 历史版本信息
 
 * 历史版本`version 0.1`
