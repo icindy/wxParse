@@ -46,6 +46,7 @@
 ![图片视觉自适应](screenshoot/auto.png)
 
 * 多个数据渲染
+
 ![多个数据渲染](screenshoot/more.png)
 
 ## 使用方式
@@ -90,7 +91,9 @@ wxParseImgTap: function(e){
 
 **bindData->指之前后需要绑定数据指向**
 
-＊ 1.模版处理
+
+* 1.模版处理
+
 
 ```
 <import src="../../wxParse/wxParse.wxml"/>
@@ -104,6 +107,7 @@ wxParseImgTap: function(e){
 ```
 
 ＊ 2.数据处理
+
 
 ```
 onLoad: function () {
