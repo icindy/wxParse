@@ -49,7 +49,7 @@ function wxParse(type,data,target){
   for(var i=0;i<wxParseImageObjArray.length;i++){
     var node = wxParseImageObjArray[i];
     var imgUrl = node.attr.src;
-    imgUrl = wxDiscode.urlToHttpUrl(imgUrl,"http");
+    imgUrl = wxDiscode.urlToHttpUrl(imgUrl,"https");
     imgUrlArr.push(imgUrl);
   }
   //更新数据

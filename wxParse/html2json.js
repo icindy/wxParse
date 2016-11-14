@@ -111,7 +111,7 @@
           node.imgIndex = __wxImageArray.length;
           __wxImageArray.push(node);
           var imgUrl = node.attr.src;
-          imgUrl = wxDiscode.urlToHttpUrl(imgUrl,"http");
+          imgUrl = wxDiscode.urlToHttpUrl(imgUrl,"https");
           node.attr.src = imgUrl;
           if (unary) {
                 // if this tag dosen't have end tag
