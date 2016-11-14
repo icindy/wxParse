@@ -50,7 +50,12 @@
 <import src="../../wxParse/wxParse.wxml"/> 
 <template is="wxParse" data="{{wxParseData}}"/>
 ```
-* 3.引入执行文件
+* 3.引入模版样式
+```
+在app.wxss或者使用wxss内
+@import "/wxParse/wxParse.wxss";
+```
+* 4.引入执行文件
 ```
 var WxParse = require('../../wxParse/wxParse.js')
 /*** 传值* 1. 类型type->'md/html'* 2. 介些内容data* 3. 指向对象-> page*/
