@@ -11,6 +11,12 @@
 [微信小程序开发论坛](http://weappdev.com)
 垂直微信小程序开发交流社区
 
+## 贡献者
+
+ * me
+ * [@Daissmentii](https://github.com/Daissmentii)
+ * [@wuyanwen](https://github.com/wuyanwen)
+
 ## 本次更新主要内容
 
 * 特性增加
@@ -38,6 +44,9 @@
 * 图片视觉自适应
 
 ![图片视觉自适应](screenshoot/auto.png)
+
+* 多个数据渲染
+![多个数据渲染](screenshoot/more.png)
 
 ## 使用方式
 
@@ -70,6 +79,56 @@ wxParseImgTap: function(e){
     WxParse.wxParseImgTap(e,that)
   }
 ```
+
+## 高级用法(多数据使用)
+
+> 在实际生产环境下，你可能需要一个页面解析多个HTML或者md的，version 0.2更新支持一个页面多数据支持
+
+**感谢[@Daissmentii](https://github.com/Daissmentii)对本模块的帮助和修改**
+
+使用`wxMoreParse(bindData,type,data,target)`
+
+**bindData->指之前后需要绑定数据指向**
+
+＊ 1.模版处理
+
+```
+<import src="../../wxParse/wxParse.wxml"/>
+<template is="wxParse" data="{{wxParseData:moreData1.tagArray}}"/>
+<template is="wxParse" data="{{wxParseData:moreData2.tagArray}}"/>
+<template is="wxParse" data="{{wxParseData:moreData3.tagArray}}"/>
+<template is="wxParse" data="{{wxParseData:moreData4.tagArray}}"/>
+<template is="wxParse" data="{{wxParseData:moreData5.tagArray}}"/>
+<template is="wxParse" data="{{wxParseData:moreData6.tagArray}}"/>
+<template is="wxParse" data="{{wxParseData:moreData7.tagArray}}"/>
+```
+
+＊ 2.数据处理
+
+```
+onLoad: function () {
+    console.log('onLoad')
+    var text = '<h1>这是由wxParse函数产生的</h1><p>hello world</p>';
+    var text1 = '<h1>第一个数据</h1><p>hello world 1</p>';
+    var text2 = '<h1>第二个数据</h1><p>hello world 2</p>';
+    var text3 = '<h1>第三个数据</h1><p>hello world 3</p>';
+    var text4 = '<h1>第四个数据</h1><p>hello world 4</p>';
+    var text5 = '<h1>第五个数据</h1><p>hello world 5</p>';
+    var text6 = '<h1>第六个数据</h1><p>hello world 6</p>';
+    var that = this
+    WxParse.wxParse('html',text,that);
+    WxParse.wxMoreParse('moreData1','html',text1,that)
+    WxParse.wxMoreParse('moreData2','html',text2,that)
+    WxParse.wxMoreParse('moreData3','html',text3,that)
+    WxParse.wxMoreParse('moreData4','html',text4,that)
+    WxParse.wxMoreParse('moreData5','html',text5,that)
+    WxParse.wxMoreParse('moreData6','html',text6,that)
+ }
+```
+
+
+
+
 
 ## 相关讲解文章
 
