@@ -10,6 +10,7 @@
  */
 
   var __wxImageArray=[];
+  var __placeImgeUrlHttps  = "https";
   var wxDiscode = require('wxDiscode.js');
   var HTMLParser = require('htmlparser.js');
   // Empty Elements - HTML 5
@@ -111,7 +112,7 @@
           node.imgIndex = __wxImageArray.length;
           __wxImageArray.push(node);
           var imgUrl = node.attr.src;
-          imgUrl = wxDiscode.urlToHttpUrl(imgUrl,"https");
+          imgUrl = wxDiscode.urlToHttpUrl(imgUrl,__placeImgeUrlHttps);
           node.attr.src = imgUrl;
           if (unary) {
                 // if this tag dosen't have end tag
