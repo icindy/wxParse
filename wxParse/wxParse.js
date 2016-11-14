@@ -9,15 +9,27 @@
  * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
  */
 
-
+/**
+ * utils函数引入
+ **/
 var showdown = require('showdown.js');
 var HtmlToJson = require('html2json.js');
 var wxDiscode = require('wxDiscode.js');
 var WxAutoImage = require('WxAutoImage.js');
-//type 'json','html','markdown'/'md'
+
+/**
+ * 配置及公有属性
+ **/
+var __placeImgeUrlHttps  = "https";
 var wxImageArrayObj = {};
 var temimgInfoArray = [];
 var imgUrlArr = [];
+
+/**
+ * 主函数入口区
+ **/
+
+// 单html或md处理入口函数
 function wxParse(type,data,target){
   wx.showToast({
     title: '加载中....',
@@ -49,7 +61,7 @@ function wxParse(type,data,target){
   for(var i=0;i<wxParseImageObjArray.length;i++){
     var node = wxParseImageObjArray[i];
     var imgUrl = node.attr.src;
-    imgUrl = wxDiscode.urlToHttpUrl(imgUrl,"https");
+    imgUrl = wxDiscode.urlToHttpUrl(imgUrl,__placeImgeUrlHttps);
     imgUrlArr.push(imgUrl);
   }
   //更新数据
@@ -61,16 +73,15 @@ function wxParse(type,data,target){
   calImageInfo(0,that);
 }
 
-// 图片宽高获取
+// 多html或md处理入口函数
 
-function parseImageWh(arr,that){
-  for(var i = 0; i < arr.length; i++){
-    console.log("arr"+i);
-    var node = arr[i];
-    
-  }
-}
 
+
+/**
+ * 图片视觉宽高计算函数区 
+ **/
+
+// 假循环获取计算图片视觉最佳宽高
 function calImageInfo(idx,that){
   if(that.data.wxParseImageObjArray.length == 0){
       return;
@@ -104,7 +115,7 @@ function calImageInfo(idx,that){
     })
 }
 
-
+// 计算视觉优先的图片宽高
 function wxAutoImageCal(originalWidth,originalHeight){
     //获取图片的原始长宽
     var windowWidth = 0,windowHeight = 0;
@@ -135,7 +146,7 @@ function wxAutoImageCal(originalWidth,originalHeight){
 
   }
 
-
+// 用于深度更换图片的宽高
 function clone(obj) {
     var o;
     if (typeof obj == "object") {
