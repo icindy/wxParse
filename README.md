@@ -94,3 +94,6 @@ wxParseImgTap: function(e){
 * 相关文章
   + [[wxParse version0.1正式发布-全面支持微信小程序富文本html及markdown动态解析](https://weappdev.com/t/wxparse-version0-1-html-markdown/208)](https://weappdev.com/t/wxparse-version0-1-html-markdown/208)
 
+## 捐助信息
+
+![支付宝/微信捐助](screenshoot/m.png)
