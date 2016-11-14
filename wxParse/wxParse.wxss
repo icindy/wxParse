@@ -109,19 +109,7 @@ view{
 }
 
 .wxParse-code,.wxParse-wxxxcode-style{
-    text-indent:0;
-    border-color:#000;
-    border-style:dashed;
-    border-width:1px;
-    display:block;
-    font-size:12px;
-    font-family:Courier, Calibri,"宋体";
-    margin:10px 0 0 0;
-    padding:10px 0 10px 5px;
-    border-radius:5px;
     background:#f5f5f5;
-    color:#000;
-    overflow: hidden;
 }
 
 
@@ -188,4 +176,7 @@ view{
 
 .wxParse-u {
   text-decoration: underline;
+}
+.wxParse-hide{
+    display: none;
 }

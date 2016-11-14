@@ -1,9 +1,6 @@
 <import src="../../wxParse/wxParse.wxml"/> 
 <view class="wxParse">
-    <view>这里是html</view>
-    <template is="wxParse" data="{{wxParseData}}"/>
-    <view>这里是markdown</view>
-    <template is="wxParse" data="{{wxParseData:testData.tagArray}}"/>
+    <template is="wxParse" data="{{wxParseData:wxParseInfoData.tagArray}}"/>
 </view>
 
 

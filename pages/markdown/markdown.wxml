@@ -3,5 +3,6 @@
 
 <view class="wxParse">
     <template is="wxParse" data="{{wxParseData}}"/>
+    <template is="wxParse" data="{{wxParseData:wxInfoData.tagArray}}"/>
 </view>
 
