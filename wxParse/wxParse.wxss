@@ -12,13 +12,16 @@
 
 .wxParse{
     margin: 0 5px;
-    font-family:Courier, Calibri,"宋体";
+    font-family: Helvetica,sans-serif;
+    font-size: 28rpx;
+    color: #666;
+    line-height: 1.8;
 }
 view{
     word-break:break-all; overflow:auto;
 }
 .wxParse-inline{
-    display: inline-block; 
+    /*display: inline-block; */
     margin: 0;
     padding: 0;
 }
@@ -106,19 +109,7 @@ view{
 }
 
 .wxParse-code,.wxParse-wxxxcode-style{
-    text-indent:0;
-    border-color:#000;
-    border-style:dashed;
-    border-width:1px;
-    display:block;
-    font-size:12px;
-    font-family:Courier, Calibri,"宋体";
-    margin:10px 0 0 0;
-    padding:10px 0 10px 5px;
-    border-radius:5px;
     background:#f5f5f5;
-    color:#000;
-    overflow: hidden;
 }
 
 
@@ -177,3 +168,15 @@ view{
     overflow: auto;
 }*/
 
+.wxParse-br {
+  line-height: 0rpx;
+  height: 0rpx;
+  display: block;
+}
+
+.wxParse-u {
+  text-decoration: underline;
+}
+.wxParse-hide{
+    display: none;
+}

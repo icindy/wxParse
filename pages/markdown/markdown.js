@@ -19,21 +19,25 @@ Page({
   },
   onLoad: function () {
     console.log('onLoad')
-    var text = '# wxParse-微信小程序富文本解析自定义组件，支持HTML及markdown解析 \n'
-    +' > 微信小程序富文本解析自定义组件，支持HTML及markdown解析 \n\n' 
-    +'## 功能列表 \n * 动态加载代码  \n * html转json \n * markdown转html转json \n * 富文本markdown解析 \n * 自定义层级解析 \n * 自定义样式表 \n'
-    +'## 文件作用 \n'
-    +' ``` // wxParse.wxml //用于解析使用的模版 ``` \n'
-    +'## 开发信息 \n '
-    +' [微信小程序开发论坛](http://weappdev.com) \n'
-    +' ![微信小程序logo](http://weappdev.com/uploads/default/original/1X/9156b32bd04323f35d0957796f126b8a54595c97.png)';
+    var text = '<h1>这是由wxParse函数产生的</h1><p>hello world</p>';
+
+    var text1 = '<h1>第一个数据</h1><p>hello world 1</p>';
+    var text2 = '<h1>第二个数据</h1><p>hello world 2</p>';
+    var text3 = '<h1>第三个数据</h1><p>hello world 3</p>';
+    var text4 = '<h1>第四个数据</h1><p>hello world 4</p>';
+    var text5 = '<h1>第五个数据</h1><p>hello world 5</p>';
+    var text6 = '<h1>第六个数据</h1><p>hello world 6</p>';
+
 
     var that = this
-    //更新数据
-    // that.setData({
-    //   wxParseData:WxParse('md',text)
-    // })
-    WxParse.wxParse('md',text,that)
+    WxParse.wxParse('html',text,that);
+    WxParse.wxMoreParse('moreData1','html',text1,that)
+    WxParse.wxMoreParse('moreData2','html',text2,that)
+    WxParse.wxMoreParse('moreData3','html',text3,that)
+    WxParse.wxMoreParse('moreData4','html',text4,that)
+    WxParse.wxMoreParse('moreData5','html',text5,that)
+    WxParse.wxMoreParse('moreData6','html',text6,that)
+
   },
   wxParseImgTap: function(e){
     var that = this

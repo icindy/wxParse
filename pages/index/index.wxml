@@ -1,6 +1,6 @@
 <import src="../../wxParse/wxParse.wxml"/> 
 <view class="wxParse">
-    <template is="wxParse" data="{{wxParseData}}"/>
+    <template is="wxParse" data="{{wxParseData:wxParseInfoData.tagArray}}"/>
 </view>
 
 

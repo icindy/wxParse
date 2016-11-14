@@ -24,7 +24,7 @@
     </text>
 </template>
 <template name="wxParseImg">
-    <image class="{{item.classStr}} wxParse-{{item.tag}}" bind-idx="{{item.imgIndex}}" bindload="wxParseImageLoad"  style="width:{{item.width}}px;height:{{item.height}}px;{{item.attr.style}}" bindtap="wxParseImgTap" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit" />
+    <image class="{{item.classStr}} wxParse-{{item.tag}}" bind-idx="{{item.imgIndex}}" bindload="wxParseImageLoad"  style="width:{{item.width}}px;height:{{item.height}}px;{{item.attr.style}}" bindtap="wxParseImgTap" data-from="{{item.from}}" data-src="{{item.attr.src}}" src="{{item.attr.src}}" mode="aspectFit" />
 </template>
 
 
@@ -117,7 +117,7 @@
     <!--判断是否是文本节点-->
     <block wx:elif="{{item.node == 'text'}}">
         <!--如果是，直接进行-->
-        {{item.text}}
+        <text class="{{item.text == '\\n' ? 'wxParse-hide':''}}">{{item.text}}</text>
     </block>
 
 </template>
@@ -188,7 +188,7 @@
     <!--判断是否是文本节点-->
     <block wx:elif="{{item.node == 'text'}}">
         <!--如果是，直接进行-->
-        {{item.text}}
+        <text class="{{item.text == '\\n' ? 'wxParse-hide':''}}">{{item.text}}</text>
     </block>
 
 </template>
@@ -258,7 +258,7 @@
     <!--判断是否是文本节点-->
     <block wx:elif="{{item.node == 'text'}}">
         <!--如果是，直接进行-->
-        {{item.text}}
+        <text class="{{item.text == '\\n' ? 'wxParse-hide':''}}">{{item.text}}</text>
     </block>
 
 </template>
@@ -328,7 +328,7 @@
     <!--判断是否是文本节点-->
     <block wx:elif="{{item.node == 'text'}}">
         <!--如果是，直接进行-->
-        {{item.text}}
+        <text class="{{item.text == '\\n' ? 'wxParse-hide':''}}">{{item.text}}</text>
     </block>
 
 </template>
@@ -398,7 +398,7 @@
     <!--判断是否是文本节点-->
     <block wx:elif="{{item.node == 'text'}}">
         <!--如果是，直接进行-->
-        {{item.text}}
+        <text class="{{item.text == '\\n' ? 'wxParse-hide':''}}">{{item.text}}</text>
     </block>
 
 </template>
@@ -468,7 +468,7 @@
     <!--判断是否是文本节点-->
     <block wx:elif="{{item.node == 'text'}}">
         <!--如果是，直接进行-->
-        {{item.text}}
+        <text class="{{item.text == '\\n' ? 'wxParse-hide':''}}">{{item.text}}</text>
     </block>
 
 </template>
@@ -538,7 +538,7 @@
     <!--判断是否是文本节点-->
     <block wx:elif="{{item.node == 'text'}}">
         <!--如果是，直接进行-->
-        {{item.text}}
+        <text class="{{item.text == '\\n' ? 'wxParse-hide':''}}">{{item.text}}</text>
     </block>
 
 </template>
@@ -608,7 +608,7 @@
     <!--判断是否是文本节点-->
     <block wx:elif="{{item.node == 'text'}}">
         <!--如果是，直接进行-->
-        {{item.text}}
+        <text class="{{item.text == '\\n' ? 'wxParse-hide':''}}">{{item.text}}</text>
     </block>
 
 </template>
@@ -678,7 +678,7 @@
     <!--判断是否是文本节点-->
     <block wx:elif="{{item.node == 'text'}}">
         <!--如果是，直接进行-->
-        {{item.text}}
+        <text class="{{item.text == '\\n' ? 'wxParse-hide':''}}">{{item.text}}</text>
     </block>
 
 </template>
@@ -748,9 +748,7 @@
     <!--判断是否是文本节点-->
     <block wx:elif="{{item.node == 'text'}}">
         <!--如果是，直接进行-->
-        {{item.text}}
+        <text class="{{item.text == '\\n' ? 'wxParse-hide':''}}">{{item.text}}</text>
     </block>
 
 </template>
-
-
