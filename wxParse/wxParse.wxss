@@ -12,13 +12,16 @@
 
 .wxParse{
     margin: 0 5px;
-    font-family:Courier, Calibri,"宋体";
+    font-family: Helvetica,sans-serif;
+    font-size: 28rpx;
+    color: #666;
+    line-height: 1.8;
 }
 view{
     word-break:break-all; overflow:auto;
 }
 .wxParse-inline{
-    display: inline-block; 
+    /*display: inline-block; */
     margin: 0;
     padding: 0;
 }
@@ -177,3 +180,12 @@ view{
     overflow: auto;
 }*/
 
+.wxParse-br {
+  line-height: 0rpx;
+  height: 0rpx;
+  display: block;
+}
+
+.wxParse-u {
+  text-decoration: underline;
+}
