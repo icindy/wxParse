@@ -6,17 +6,6 @@ var WxParse = require('../../wxParse/wxParse.js');
 //var WxParse = require('../../wxParse/showdown.js');
 var Util = require('../../utils/util.js');
 Page({
-  data: {
-    motto: 'Hello World',
-    userInfo: {},
-    wxParseData:[]
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   onLoad: function () {
     console.log('onLoad')
     var text = '<h1>这是由wxParse函数产生的</h1><p>hello world</p>';

@@ -2,9 +2,3 @@
 <view class="wxParse">
     <template is="wxParse" data="{{wxParseData:wxParseInfoData.tagArray}}"/>
 </view>
-
-
-
-
-
-

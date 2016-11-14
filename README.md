@@ -130,10 +130,6 @@ onLoad: function () {
  }
 ```
 
-
-
-
-
 ## 相关讲解文章
 
 * [wxDiscode－微信小程序特殊字符转义符转化工具类](http://weappdev.com/t/wxdiscode/203)
