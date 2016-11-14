@@ -33,7 +33,7 @@ Page({
     //   wxParseData:WxParse('html',html)
     // })
 
-    WxParse.wxParse('html',html,that)
+    // WxParse.wxParse('html',html,that)
 
     var text = '# wxParse-微信小程序富文本解析自定义组件，支持HTML及markdown解析 \n'
     +' > 微信小程序富文本解析自定义组件，支持HTML及markdown解析 \n\n' 

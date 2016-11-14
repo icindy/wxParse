@@ -16,7 +16,8 @@ Page({
         // self.setData({
         //   wxParseData: WxParse('md',res.data.data.content)
         // });
-        WxParse.wxParse('md',res.data.data.content,self)
+        // WxParse.wxParse('md',res.data.data.content,self)
+        WxParse.wxMoreParse('cnodeData','md',res.data.data.content,self)
       }
     });
   },
