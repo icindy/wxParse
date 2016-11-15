@@ -168,12 +168,6 @@ view{
     overflow: auto;
 }*/
 
-.wxParse-br {
-  line-height: 0rpx;
-  height: 0rpx;
-  display: block;
-}
-
 .wxParse-u {
   text-decoration: underline;
 }
