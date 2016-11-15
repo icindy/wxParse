@@ -24,5 +24,9 @@ Page({
   wxParseImgTap: function(e){
     var that = this
     WxParse.wxParseImgTap(e,that)
+  },
+  wxParseImgLoad: function (e){
+    var that = this
+    WxParse.wxParseImgLoad(e,that)
   }
 })

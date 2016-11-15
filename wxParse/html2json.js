@@ -49,7 +49,7 @@
   }
 
 
-  function html2json(html) {
+  function html2json(html,bindData) {
     __wxImageArray = [];
     html = removeDOCTYPE(html);
     var bufArray = [];
@@ -65,6 +65,7 @@
           node: 'element',
           tag: tag,
         };
+        
         if(block[tag]){
           node.tagType = "block";
         }else if(inline[tag]){
@@ -114,6 +115,7 @@
           var imgUrl = node.attr.src;
           imgUrl = wxDiscode.urlToHttpUrl(imgUrl,__placeImgeUrlHttps);
           node.attr.src = imgUrl;
+          node.from = bindData;
           if (unary) {
                 // if this tag dosen't have end tag
                 // like <img src="hoge.png"/>
