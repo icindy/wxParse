@@ -31,11 +31,6 @@ var imgUrlArr = [];
 
 // 单html或md处理入口函数
 function wxParse(type, data, target) {
-  wx.showToast({
-    title: '加载中....',
-    icon: 'loading',
-    duration: 30000
-  })
   var that = target;
   var wxParseData = [];
   if (type == 'json') {
@@ -70,7 +65,7 @@ function wxParse(type, data, target) {
     wxParseImgArray: imgUrlArr,
     wxParseImageObjArray: wxParseImageObjArray
   })
-  calImageInfo(0, that);
+  // calImageInfo(0, that);
 }
 
 // 多html或md处理入口函数
@@ -117,7 +112,6 @@ function wxMoreParse(bindData, type, data, target) {
   }
   // //更新数据
   that.setData(moreData)
-  // calMoreImageInfo(0,that,bindData);
 }
 
 
@@ -138,7 +132,12 @@ function calMoreImageInfo(e, idx, that, bindData) {
   var temData = that.data[bindData];
   temData.wxParseImageObjArray = temWxParseImageObjArray;
   var moreData = {};
-  temData.temImgNum += 1;
+  if(typeof(temData.temImgNum) == "undefined"){
+    temData.temImgNum = 1;
+  }else{
+    temData.temImgNum += 1;
+  }
+  
   temData.wxParseTemImageObjArray = temWxParseImageObjArray;
   moreData[bindData] = temData;
   that.setData(moreData);
@@ -257,36 +256,33 @@ function clone(obj) {
  **/
 
 // 假循环获取计算图片视觉最佳宽高
-function calImageInfo(idx, that) {
+function calImageInfo(e, idx, that) {
   if (that.data.wxParseImageObjArray.length == 0) {
     return;
   }
   var temWxParseImageObjArray = that.data.wxParseImageObjArray;
   var imgUrl = temWxParseImageObjArray[idx].attr.src;
-  wx.getImageInfo({
-    src: imgUrl,
-    success: function (res) {
-      // console.log(i+"width:"+res.width);
-      // console.log("height:"+res.height);
-      var recal = wxAutoImageCal(res.width, res.height);
-      temWxParseImageObjArray[idx].width = recal.imageWidth;
-      temWxParseImageObjArray[idx].height = recal.imageheight;
-      that.setData({
-        wxParseImageObjArray: temWxParseImageObjArray
-      })
-      if (idx == temWxParseImageObjArray.length - 1) {
-        temimgInfoArray = temWxParseImageObjArray;
-
-        //更新数据
-        that.setData({
-          wxParseData: clone(that.data.wxParseData)
-        })
-        wx.hideToast()
-      } else {
-        calImageInfo(idx + 1, that);
-      }
-    }
-  })
+  var recal = wxAutoImageCal(e.detail.width, e.detail.height);
+  temWxParseImageObjArray[idx].width = recal.imageWidth;
+  temWxParseImageObjArray[idx].height = recal.imageheight;
+  var temData = that.data;
+  var moreData = {};
+  moreData.wxParseImageObjArray = temWxParseImageObjArray;
+  // temData.temImgNum = temImgNum;
+  if(typeof(temData.temImgNum) == "undefined"){
+    temData.temImgNum = 1;
+  }else{
+    temData.temImgNum += 1;
+  }
+  moreData.temImgNum = temData.temImgNum;
+  that.setData(moreData);
+  if (moreData.temImgNum == temWxParseImageObjArray.length) {
+    temimgInfoArray = temWxParseImageObjArray;
+    //更新数据
+    that.setData({
+      wxParseData: clone(that.data.wxParseData)
+    })
+  }
 }
 
 // 计算视觉优先的图片宽高
@@ -340,38 +336,12 @@ function wxParseImgTap(e, that) {
 function wxParseImgLoad(e, that) {
   var tagFrom = e.target.dataset.from;
   var idx = e.target.dataset.sid;
-  calMoreImageInfo(e, idx, that, tagFrom)
-  // var tagFromArrayName = e.target.dataset.from+"temLoadImgArray";
-  // var tagFrom = e.target.dataset.from;
-  // var tagFromArray = that.data[tagFromArrayName];
-  // var temWxParseImageObjArray = that.data[tagFrom].wxParseImageObjArray;
-  // if(typeof(tagFromArray) != 'undefined' && temWxParseImageObjArray.length ==  tagFromArray.length){
-  //   var reTagFromArray = new Array(tagFromArray.length);
-  //   for(var i =0; i < tagFromArray.length; i++ ){
-  //     var temObj =  tagFromArray[i];
-  //     var idx = parseInt(temObj.target.dataset.sid);
-  //     reTagFromArray[idx] = temObj;
-  //   }
+  if (typeof (tagFrom) != 'undefined' && tagFrom.length > 0) {
+    calMoreImageInfo(e, idx, that, tagFrom)
+  } else {
+    calImageInfo(e, idx, that)
+  }
 
-  //   for(var i = 0; i < reTagFromArray.length; i++){
-  //     var temObj =  reTagFromArray[i];
-  //     var tagFrom = temObj.target.dataset.from;
-  //     var idx = temObj.target.dataset.sid;
-  //     calMoreImageInfo(temObj, idx, that, tagFrom)
-  //   }
-
-  // }else{
-  //   if(typeof(tagFromArray) == 'undefined'){
-  //     tagFromArray = [];
-  //   }
-
-  //   tagFromArray.push(e);
-  //   var temData = {};
-  //   temData[tagFromArrayName] = tagFromArray;
-  //   that.setData(temData);
-
-  // }
-  
 }
 
 module.exports = {

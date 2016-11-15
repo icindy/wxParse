@@ -8,7 +8,7 @@ var Util = require('../../utils/util.js');
 Page({
   onLoad: function () {
     console.log('onLoad')
-    var text = '<h1>这是由wxParse函数产生的</h1><p>hello world</p>';
+     var text = 'hello';
 
     var text1 = '<h1>第一个数据</h1><p>hello world 1</p>';
     var text2 = '<h1>第二个数据</h1><p>hello world 2</p>';
@@ -31,5 +31,10 @@ Page({
   wxParseImgTap: function(e){
     var that = this
     WxParse.wxParseImgTap(e,that)
+  },
+  wxParseImgLoad: function (e){
+    var that = this
+    WxParse.wxParseImgLoad(e,that)
   }
 })
+

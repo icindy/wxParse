@@ -1,3 +1,15 @@
+## 特别提示，紧急添加
+
+> 由于wx.geiImageInfo无法在真机获取网络图片大小，紧急修改方案，在使用的用户无比关注这个地方
+
+* 5.必须加入wxParseImgLoad,为图片加载后调整大小
+```
+ wxParseImgLoad: function (e){
+    var that = this
+    WxParse.wxParseImgLoad(e,that)
+  }
+```
+
 ## wxParse信息
 
 * 版本号`0.1`
@@ -73,7 +85,15 @@ var that = this
 WxParse.wxParse('html',html,that)
 ```
 
-* 4.可选: image的tap事件,影响图片预览和相册功能
+* 5.必须加入wxParseImgLoad,为图片加载后调整大小
+```
+ wxParseImgLoad: function (e){
+    var that = this
+    WxParse.wxParseImgLoad(e,that)
+  }
+```
+
+* 6.可选: image的tap事件,影响图片预览和相册功能
 ```
 wxParseImgTap: function(e){
     var that = this

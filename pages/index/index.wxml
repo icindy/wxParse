@@ -1,4 +1,7 @@
 <import src="../../wxParse/wxParse.wxml"/> 
 <view class="wxParse">
-    <template is="wxParse" data="{{wxParseData:wxParseInfoData.tagArray}}"/>
+    <!--基础实现方式-->
+    <template is="wxParse" data="{{wxParseData}}"/>
+    <!--备份使用方式-->
+    <!--<template is="wxParse" data="{{wxParseData:wxParseInfoData.tagArray}}"/>-->
 </view>

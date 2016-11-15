@@ -13,11 +13,9 @@ Page({
     wx.request({
       url: Api.getTopicByID(id, { mdrender: false }),
       success: function (res) {
-        // self.setData({
-        //   wxParseData: WxParse('md',res.data.data.content)
-        // });
-        // WxParse.wxParse('md',res.data.data.content,self)
-        WxParse.wxMoreParse('wxParseInfoData','md',res.data.data.content,self)
+        WxParse.wxParse('md',res.data.data.content,self)
+        // 去掉注视开启多实现方式
+        // WxParse.wxMoreParse('wxParseInfoData','md',res.data.data.content,self)
       }
     });
   },
