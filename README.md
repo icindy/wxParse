@@ -23,6 +23,8 @@
 [微信小程序开发论坛](http://weappdev.com)
 垂直微信小程序开发交流社区
 
+![小码消息](screenshoot/wmm.png)
+
 ## 贡献者
 
  * me
