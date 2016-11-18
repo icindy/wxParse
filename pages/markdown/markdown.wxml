@@ -3,13 +3,16 @@
 
 <view class="wxParse">
     <template is="wxParse" data="{{wxParseData}}"/>
-    <template is="wxParse" data="{{wxParseData:moreData1.tagArray}}"/>
-    <template is="wxParse" data="{{wxParseData:moreData2.tagArray}}"/>
+    <block wx:for="{{wxParseTemArray}}">
+        <template is="wxParse" data="{{wxParseData:item}}"/>
+    </block>
+    
+    <!--<template is="wxParse" data="{{wxParseData:moreData2.tagArray}}"/>
     <template is="wxParse" data="{{wxParseData:moreData3.tagArray}}"/>
     <template is="wxParse" data="{{wxParseData:moreData4.tagArray}}"/>
     <template is="wxParse" data="{{wxParseData:moreData5.tagArray}}"/>
     <template is="wxParse" data="{{wxParseData:moreData6.tagArray}}"/>
-    <template is="wxParse" data="{{wxParseData:moreData7.tagArray}}"/>
+    <template is="wxParse" data="{{wxParseData:moreData7.tagArray}}"/>-->
 
 </view>
 

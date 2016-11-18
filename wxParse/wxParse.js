@@ -344,11 +344,24 @@ function wxParseImgLoad(e, that) {
 
 }
 
+function wxParseTemArray(bindData,total,that){
+  var array = [];
+  var temData = that.data;
+  for(var i = 0; i < total; i++){
+    var simArr = temData[bindData+i].tagArray;
+    array.push(simArr);
+  }
+  that.setData({
+    wxParseTemArray:array
+  });
+}
+
 module.exports = {
   wxParse: wxParse,
   wxMoreParse: wxMoreParse,
   wxParseImgTap: wxParseImgTap,
-  wxParseImgLoad: wxParseImgLoad
+  wxParseImgLoad: wxParseImgLoad,
+  wxParseTemArray:wxParseTemArray
 }
 
 

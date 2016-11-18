@@ -9,7 +9,7 @@ Page({
   onLoad: function () {
     console.log('onLoad')
      var text = 'hello';
-
+     var text1 = '<h1>第一个数据</h1><p>hello world 0</p>';
     var text1 = '<h1>第一个数据</h1><p>hello world 1</p>';
     var text2 = '<h1>第二个数据</h1><p>hello world 2</p>';
     var text3 = '<h1>第三个数据</h1><p>hello world 3</p>';
@@ -20,13 +20,14 @@ Page({
 
     var that = this
     WxParse.wxParse('html',text,that);
+    WxParse.wxMoreParse('moreData0','html',text1,that)
     WxParse.wxMoreParse('moreData1','html',text1,that)
     WxParse.wxMoreParse('moreData2','html',text2,that)
     WxParse.wxMoreParse('moreData3','html',text3,that)
     WxParse.wxMoreParse('moreData4','html',text4,that)
     WxParse.wxMoreParse('moreData5','html',text5,that)
     WxParse.wxMoreParse('moreData6','html',text6,that)
-
+    WxParse.wxParseTemArray("moreData",7,that);
   },
   wxParseImgTap: function(e){
     var that = this
