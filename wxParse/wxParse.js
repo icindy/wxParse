@@ -12,10 +12,9 @@
 /**
  * utils函数引入
  **/
-var showdown = require('showdown.js');
-var HtmlToJson = require('html2json.js');
-var wxDiscode = require('wxDiscode.js');
-var WxAutoImage = require('WxAutoImage.js');
+import showdown from 'showdown.js';
+import HtmlToJson from 'html2json.js';
+import wxDiscode from 'wxDiscode.js';
 
 /**
  * 配置及公有属性
@@ -29,25 +28,18 @@ var imgUrlArr = [];
  * 主函数入口区
  **/
 
-// 单html或md处理入口函数
-function wxParse(type, data, target) {
+var wxParse = (type = 'html',data = '',target) => {
   var that = target;
   var wxParseData = [];
-  if (type == 'json') {
-    var json = HtmlToJson.html2json(html);
-    console.log(JSON.stringify(json, ' ', ' '));
-    wxParseData = json.child;
-  } else if (type == 'html') {
+  if (type == 'html') {
     data = wxDiscode.strDiscode(data);
     var json = HtmlToJson.html2json(data);
-    console.log(JSON.stringify(json, ' ', ' '));
     wxParseData = json.child;
   } else if (type == 'md' || type == 'markdown') {
     var converter = new showdown.Converter();
     var html = converter.makeHtml(data);
     html = wxDiscode.strDiscode(html);
     var json = HtmlToJson.html2json(html);
-    console.log(JSON.stringify(json, ' ', ' '));
     wxParseData = json.child;
   }
   var wxParseImageObjArray = HtmlToJson.wxImageArray();
@@ -65,8 +57,11 @@ function wxParse(type, data, target) {
     wxParseImgArray: imgUrlArr,
     wxParseImageObjArray: wxParseImageObjArray
   })
-  // calImageInfo(0, that);
+
 }
+ 
+
+
 
 // 多html或md处理入口函数
 

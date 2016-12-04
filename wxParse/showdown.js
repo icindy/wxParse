@@ -8,11 +8,6 @@
  * for: 微信小程序富文本解析
  * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
  */
-;/*! showdown 19-08-2016 */
-(function(){
-/**
- * Created by Tivie on 13-07-2015.
- */
 
 function getDefaultOpts(simple) {
   'use strict';
@@ -2531,24 +2526,4 @@ showdown.subParser('unescapeSpecialChars', function (text) {
   });
   return text;
 });
-
-var root = this;
-
-// CommonJS/nodeJS Loader
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = showdown;
-
-// AMD Loader
-} else if (typeof define === 'function' && define.amd) {
-  define(function () {
-    'use strict';
-    return showdown;
-  });
-
-// Regular Browser loader
-} else {
-  root.showdown = showdown;
-}
-}).call(this);
-
-//# sourceMappingURL=showdown.js.map
+module.exports = showdown;
