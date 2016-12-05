@@ -28,7 +28,7 @@ var imgUrlArr = [];
  * 主函数入口区
  **/
 
-var wxParse = (type = 'html',data = '',target) => {
+function wxParse (type = 'html',data = '',target) {
   var that = target;
   var wxParseData = [];
   if (type == 'html') {
