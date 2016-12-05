@@ -88,19 +88,6 @@ function HTMLParser(html, handler) {
 
 		} else {
 
-
-			// if(special[stack.last()]){
-			// 	console.log("code");
-			// }else{
-			// 	html = html.replace(new RegExp("([\\s\\S]*?)<\/" + stack.last() + "[^>]*>"), function (all, text) {
-			// 		text = text.replace(/<!--([\s\S]*?)-->|<!\[CDATA\[([\s\S]*?)]]>/g, "$1$2");
-			// 		if (handler.chars)
-			// 			handler.chars(text);
-
-			// 		return "";
-			// 	});
-			// }
-
 			html = html.replace(new RegExp("([\\s\\S]*?)<\/" + stack.last() + "[^>]*>"), function (all, text) {
 				text = text.replace(/<!--([\s\S]*?)-->|<!\[CDATA\[([\s\S]*?)]]>/g, "$1$2");
 				if (handler.chars)
@@ -191,7 +178,5 @@ function makeMap(str) {
 		obj[items[i]] = true;
 	return obj;
 }
-
-
 
 module.exports = HTMLParser;

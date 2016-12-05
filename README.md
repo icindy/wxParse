@@ -5,7 +5,7 @@
 
 parsedata:{
     view:{},//样式存储
-    wxParseData:{},//展示需要的存储
+    nodes:{},//展示需要的存储节点
     imgs:[],//存放图片数组
 }
 

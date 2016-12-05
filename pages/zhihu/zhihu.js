@@ -28,7 +28,7 @@ Page({
             // that.setData( {
             //     wxParseData:WxParse('html',res.data.body)
             // });
-            WxParse.wxParse('html',res.data.body,that)
+            WxParse.wxParse('zhihudata','html',res.data.body,that)
 
         });
     //更新数据

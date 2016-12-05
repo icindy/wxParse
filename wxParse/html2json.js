@@ -9,7 +9,6 @@
  * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
  */
 
-var __wxImageArray = [];
 var __placeImgeUrlHttps = "https";
 var wxDiscode = require('wxDiscode.js');
 var HTMLParser = require('htmlparser.js');
@@ -49,13 +48,17 @@ function removeDOCTYPE(html) {
 }
 
 
-function html2json(html, bindData) {
-    __wxImageArray = [];
+function html2json(html, bindName) {
+    //处理字符串
     html = removeDOCTYPE(html);
+    html = wxDiscode.strDiscode(html);
+    //生成node节点
     var bufArray = [];
     var results = {
-        node: 'root',
-        child: [],
+        node: bindName,
+        nodes: [],
+        images:[],
+        imageUrls:[]
     };
     HTMLParser(html, {
         start: function (tag, attrs, unary) {
@@ -108,41 +111,28 @@ function html2json(html, bindData) {
                 }, {});
             }
 
-
-            if (node.tag == 'img') {
-                node.imgIndex = __wxImageArray.length;
-                __wxImageArray.push(node);
+            //对img添加额外数据
+            if (node.tag === 'img') {
+                node.imgIndex = results.images.length;
                 var imgUrl = node.attr.src;
                 imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
                 node.attr.src = imgUrl;
-                node.from = bindData;
-                if (unary) {
-                    // if this tag dosen't have end tag
-                    // like <img src="hoge.png"/>
-                    // add to parents
-                    var parent = bufArray[0] || results;
-                    if (parent.child === undefined) {
-                        parent.child = [];
-                    }
-                    parent.child.push(node);
-                } else {
-                    bufArray.unshift(node);
-                }
+                node.from = bindName;
+                results.images.push(node);
+                results.imageUrls.push(imgUrl);
+            }
 
+            if (unary) {
+                // if this tag dosen't have end tag
+                // like <img src="hoge.png"/>
+                // add to parents
+                var parent = bufArray[0] || results;
+                if (parent.child === undefined) {
+                    parent.child = [];
+                }
+                parent.child.push(node);
             } else {
-                if (unary) {
-                    // if this tag dosen't have end tag
-                    // like <img src="hoge.png"/>
-                    // add to parents
-                    var parent = bufArray[0] || results;
-                    if (parent.child === undefined) {
-                        parent.child = [];
-                    }
-                    parent.child.push(node);
-                } else {
-                    bufArray.unshift(node);
-                }
-
+                bufArray.unshift(node);
             }
         },
         end: function (tag) {
@@ -152,7 +142,7 @@ function html2json(html, bindData) {
             if (node.tag !== tag) console.error('invalid state: mismatch end tag');
 
             if (bufArray.length === 0) {
-                results.child.push(node);
+                results.nodes.push(node);
             } else {
                 var parent = bufArray[0];
                 if (parent.child === undefined) {
@@ -168,7 +158,7 @@ function html2json(html, bindData) {
                 text: text,
             };
             if (bufArray.length === 0) {
-                results.child.push(node);
+                results.nodes.push(node);
             } else {
                 var parent = bufArray[0];
                 if (parent.child === undefined) {
@@ -193,13 +183,7 @@ function html2json(html, bindData) {
     return results;
 };
 
-
-function returnWxImageArray() {
-    return __wxImageArray;
-}
-
 module.exports = {
-    html2json: html2json,
-    wxImageArray: returnWxImageArray
+    html2json: html2json
 };
 
