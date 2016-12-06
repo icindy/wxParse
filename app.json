@@ -1,10 +1,7 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/markdown/markdown",
-    "pages/zhihu/zhihu",
-    "pages/cnode/cnode",
-    "pages/logs/logs"
+    "pages/lab/lab"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -21,22 +18,12 @@
       "pagePath": "pages/index/index",
       "iconPath": "image/icon_API.png",
       "selectedIconPath": "image/icon_API_HL.png",
-      "text": "html"
+      "text": "Demo"
     }, {
-      "pagePath": "pages/markdown/markdown",
+      "pagePath": "pages/lab/lab",
       "iconPath": "image/icon_API.png",
       "selectedIconPath": "image/icon_API_HL.png",
-      "text": "markdown"
-    }, {
-      "pagePath": "pages/zhihu/zhihu",
-      "iconPath": "image/icon_API.png",
-      "selectedIconPath": "image/icon_API_HL.png",
-      "text": "zhihu"
-    }, {
-      "pagePath": "pages/cnode/cnode",
-      "iconPath": "image/icon_API.png",
-      "selectedIconPath": "image/icon_API_HL.png",
-      "text": "cnode"
+      "text": "实验室"
     }]
   }
 }

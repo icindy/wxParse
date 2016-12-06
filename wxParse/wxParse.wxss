@@ -21,7 +21,7 @@ view{
     word-break:break-all; overflow:auto;
 }
 .wxParse-inline{
-    /*display: inline-block; */
+    display: inline;
     margin: 0;
     padding: 0;
 }
@@ -109,11 +109,9 @@ view{
 }
 
 .wxParse-code,.wxParse-wxxxcode-style{
+    display: inline;
     background:#f5f5f5;
 }
-
-
-
 .wxParse-ul{
     margin: 20rpx 10rpx;
 }
@@ -173,4 +171,11 @@ view{
 }
 .wxParse-hide{
     display: none;
+}
+.WxEmojiView{
+    align-items: center;
+}
+.wxEmoji{
+    width: 16px;
+    height:16px;
 }
