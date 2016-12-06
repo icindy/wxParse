@@ -21,11 +21,15 @@
 | - [x] 模版层级可扩展性    |                |               |
 | - [x] 多数据循环方式      |                |  |
 | - [x] 内联style         |                |   |
-| - [x] 内联style         |                |   |
+|         |                |   |
 
 ## 相关截图
 
 ![相关截图](screenshoot/screen.jpg)
+
+## 感谢
+
+| [@Daissmentii](https://github.com/Daissmentii)        | [@wuyanwen](https://github.com/wuyanwen)           | [@vcxiaohan](https://github.com/vcxiaohan)  |
 
 ## 基本使用方法
 

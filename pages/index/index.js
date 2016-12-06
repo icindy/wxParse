@@ -145,7 +145,7 @@ Page({
     for (let i = 0; i < replyArr.length; i++) {
       WxParse.wxParse('reply' + i, 'html', replyArr[i], that);
       if (i === replyArr.length - 1) {
-        WxParse.wxParseTemArray('reply', replyArr.length, that)
+        WxParse.wxParseTemArray("replyTemArray",'reply', replyArr.length, that)
       }
     }
   }
