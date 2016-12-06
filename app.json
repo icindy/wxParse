@@ -1,9 +1,7 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/markdown/markdown",
     "pages/zhihu/zhihu",
-    "pages/cnode/cnode",
     "pages/logs/logs"
   ],
   "window":{
@@ -11,5 +9,22 @@
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "WxParse",
     "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "image/icon_API.png",
+      "selectedIconPath": "image/icon_API_HL.png",
+      "text": "Demo"
+    }, {
+      "pagePath": "pages/zhihu/zhihu",
+      "iconPath": "image/icon_API.png",
+      "selectedIconPath": "image/icon_API_HL.png",
+      "text": "实验室"
+    }]
   }
 }

@@ -17,14 +17,11 @@ import HtmlToJson from 'html2json.js';
 /**
  * 配置及公有属性
  **/
-var __viewConfig={};
-var gimagePadding = 0;
 /**
  * 主函数入口区
  **/
-function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:red;">数据不能为空</div>', target,imagePadding=0) {
+function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:red;">数据不能为空</div>', target,imagePadding) {
   var that = target;
-  gimagePadding = imagePadding;
   var transData = {};//存放转化后的数据
   if (type == 'html') {
     transData = HtmlToJson.html2json(data, bindName);
@@ -34,6 +31,11 @@ function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:
     var html = converter.makeHtml(data);
     transData = HtmlToJson.html2json(html, bindName);
     console.log(JSON.stringify(transData, ' ', ' '));
+  }
+  transData.view = {};
+  transData.view.imagePadding = 0;
+  if(typeof(imagePadding) != 'undefined'){
+    transData.view.imagePadding = imagePadding
   }
   var bindData = {};
   bindData[bindName] = transData;
@@ -73,7 +75,7 @@ function calMoreImageInfo(e, idx, that, bindName) {
   }
   var temImages = temData.images;
   //因为无法获取view宽度 需要自定义padding进行计算，稍后处理
-  var recal = wxAutoImageCal(e.detail.width, e.detail.height); 
+  var recal = wxAutoImageCal(e.detail.width, e.detail.height,that,bindName); 
   temImages[idx].width = recal.imageWidth;
   temImages[idx].height = recal.imageheight; 
   temData.images = temImages;
@@ -83,14 +85,15 @@ function calMoreImageInfo(e, idx, that, bindName) {
 }
 
 // 计算视觉优先的图片宽高
-function wxAutoImageCal(originalWidth, originalHeight,padding) {
+function wxAutoImageCal(originalWidth, originalHeight,that,bindName) {
   //获取图片的原始长宽
   var windowWidth = 0, windowHeight = 0;
   var autoWidth = 0, autoHeight = 0;
   var results = {};
   wx.getSystemInfo({
     success: function (res) {
-      windowWidth = res.windowWidth;
+      var padding = that.data[bindName].view.imagePadding;
+      windowWidth = res.windowWidth-2*padding;
       windowHeight = res.windowHeight;
       //判断按照那种方式进行缩放
       console.log("windowWidth" + windowWidth);

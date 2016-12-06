@@ -99,7 +99,8 @@ Page({
 		</div>
 	</div>
     `;
-    WxParse.wxParse('article', 'html', article, that);
+    
+    WxParse.wxParse('article', 'html', article, that,5);
 
 
     /**

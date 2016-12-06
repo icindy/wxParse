@@ -1,16 +1,24 @@
 ![wxParse-微信小程序富文本解析组件logo](screenshoot/wxParse_logo.jpg)
+<p align="center"><a href="https://github.com/icindy/wxParse" target="_blank"><img src="screenshoot/wxParse_logo.jpg"></a></p>
 
-## 转换后的数据格式
+## wxParse-微信小程序富文本解析组件
+**支持Html及markdown转wxml可视化**
+* 版本号:0.3
+* 来源: [微信小程序开发论坛-weappdev](https://weappdev.com)
+* 作用: 将Html/Markdown转换为微信小程序的可视化方案
 
 
-> 为了保证多数据下的数据独立,建立以绑定名称为基准的数据格式，如我们
+## 基础数据格式
 
+```
 parsedata:{
     view:{},//样式存储
     nodes:{},//展示需要的存储节点
     images:[],//存放图片对象数组
     imageUrls:[],//存放图片url数组
 }
+
+```
 
 ## 链接可跳转规则
 

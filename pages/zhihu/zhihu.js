@@ -22,13 +22,11 @@ Page({
 
         // 请求内容数据
         util.AJAX( "news/8911910", function( res ) {
-
-            
             console.log(res.data.body);
             // that.setData( {
             //     wxParseData:WxParse('html',res.data.body)
             // });
-            WxParse.wxParse('zhihudata','html',res.data.body,that)
+            WxParse.wxParse('zhihudata','html',res.data.body,that,5)
 
         });
     //更新数据
