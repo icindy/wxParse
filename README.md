@@ -143,6 +143,7 @@ parsedata:{
 * [微信小程序组件wxParse中的模版template使用 既然不能循环那就使用笨办法](http://weappdev.com/t/wxparse-template/192)
 * [微信小程序单图片的自适应计算](https://weappdev.com/t/topic/301)
 
+
 ## 捐献
 
 * 参见wiki[捐献作者](https://github.com/icindy/wxParse/wiki/%E6%8D%90%E7%8C%AE%E4%BD%9C%E8%80%85)
@@ -150,5 +151,9 @@ parsedata:{
 ## 来源
 [微信小程序开发论坛](http://weappdev.com)
 垂直微信小程序开发交流社区
+
+可在网站扫描二维码进入我们的微信小程序群，也可以微信搜索"weappmsg"进入"小码消息"公众号
+![小码消息-weappmsg](screenshoot/weappmsg_qr.jpg)
+其他方式:合作qq群511389428
 
 
