@@ -11,32 +11,5 @@
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "WxParse",
     "navigationBarTextStyle":"white"
-  },
-  "tabBar": {
-    "color": "#dddddd",
-    "selectedColor": "#3cc51f",
-    "borderStyle": "white",
-    "backgroundColor": "#ffffff",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "iconPath": "image/icon_API.png",
-      "selectedIconPath": "image/icon_API_HL.png",
-      "text": "html"
-    }, {
-      "pagePath": "pages/markdown/markdown",
-      "iconPath": "image/icon_API.png",
-      "selectedIconPath": "image/icon_API_HL.png",
-      "text": "markdown"
-    }, {
-      "pagePath": "pages/zhihu/zhihu",
-      "iconPath": "image/icon_API.png",
-      "selectedIconPath": "image/icon_API_HL.png",
-      "text": "zhihu"
-    }, {
-      "pagePath": "pages/cnode/cnode",
-      "iconPath": "image/icon_API.png",
-      "selectedIconPath": "image/icon_API_HL.png",
-      "text": "cnode"
-    }]
   }
 }

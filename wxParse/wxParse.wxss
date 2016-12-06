@@ -172,7 +172,10 @@ view{
 .wxParse-hide{
     display: none;
 }
+.WxEmojiView{
+    align-items: center;
+}
 .wxEmoji{
-    width: 14px;
-    height:14px;
+    width: 16px;
+    height:16px;
 }
