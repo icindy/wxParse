@@ -10,23 +10,13 @@
 * 作用: 将Html/Markdown转换为微信小程序的可视化方案
 
 
-## 基础数据格式
 
-```
-parsedata:{
-    view:{},//样式存储
-    nodes:{},//展示需要的存储节点
-    images:[],//存放图片对象数组
-    imageUrls:[],//存放图片url数组
-}
-
-```
 
 ## 特性
 
 
 | 支持特性        | 实验功能           | ToDo  |
-| ------------- |:-------------:| -----:|
+| ------------- |-------------| -----|
 | - [x] HTML的大部分标签解析 | [x] 小表情emjio | [x] table标签 |
 | - [x] 内联style          | [x] a标签跳转   |               |
 | - [x] 标签Class          | [x] 动态添加    |               |
@@ -40,7 +30,7 @@ parsedata:{
 
 ## 基本使用方法
 
-1. Copy文件夹`wxParse`
+* 1. Copy文件夹`wxParse`
 ```
 - wxParse/
   -wxParse.js(必须存在)
@@ -53,7 +43,7 @@ parsedata:{
   -emojis(可选)
 ```
 
-2. 引入必要文件
+* 2. 引入必要文件
 
 ```
 //在使用的View中引入WxParse模块
@@ -65,7 +55,7 @@ var WxParse = require('../../wxParse/wxParse.js');
 @import "/wxParse/wxParse.wxss";
 ```
 
-3. 数据绑定
+* 3. 数据绑定
 ```
 var article = '<div>我是HTML代码</div>';
 /**
@@ -80,7 +70,7 @@ var that = this;
 WxParse.wxParse('article', 'html', article, that,5);
 ```
 
-4. 模版引用
+* 4. 模版引用
 ```
 //这里data中article为bindName
 <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
@@ -122,14 +112,25 @@ WxParse.emojisInit('[]', "/wxParse/emojis/", {
 ```
 
 * 多数据格式
-
-* 参见wiki[wxParse多数据循环使用方法](https://github.com/icindy/wxParse/wiki/wxParse%E5%A4%9A%E6%95%B0%E6%8D%AE%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+ + 参见wiki[wxParse多数据循环使用方法](https://github.com/icindy/wxParse/wiki/wxParse%E5%A4%9A%E6%95%B0%E6%8D%AE%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
 
 ## FAQ
 
 * 参见wiki[weParse常见问题FAQ](https://github.com/icindy/wxParse/wiki/wxParse%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98FAQ)
 
 ## 二次开发
+
+* 基础数据格式
+
+```
+parsedata:{
+    view:{},//样式存储
+    nodes:{},//展示需要的存储节点
+    images:[],//存放图片对象数组
+    imageUrls:[],//存放图片url数组
+}
+
+```
 
 * 参见wiki[wxParse二次开发文档](https://github.com/icindy/wxParse/wiki/wxParse%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3)
 
