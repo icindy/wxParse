@@ -17,12 +17,14 @@ import HtmlToJson from 'html2json.js';
 /**
  * 配置及公有属性
  **/
-
+var __viewConfig={};
+var gimagePadding = 0;
 /**
  * 主函数入口区
  **/
-function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:red;">数据不能为空</div>', target,config={imagePadding:10}) {
+function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:red;">数据不能为空</div>', target,imagePadding=0) {
   var that = target;
+  gimagePadding = imagePadding;
   var transData = {};//存放转化后的数据
   if (type == 'html') {
     transData = HtmlToJson.html2json(data, bindName);
@@ -82,14 +84,13 @@ function calMoreImageInfo(e, idx, that, bindName) {
 }
 
 // 计算视觉优先的图片宽高
-function wxAutoImageCal(originalWidth, originalHeight) {
+function wxAutoImageCal(originalWidth, originalHeight,padding) {
   //获取图片的原始长宽
   var windowWidth = 0, windowHeight = 0;
   var autoWidth = 0, autoHeight = 0;
   var results = {};
   wx.getSystemInfo({
     success: function (res) {
-      // console.dir(res);
       windowWidth = res.windowWidth;
       windowHeight = res.windowHeight;
       //判断按照那种方式进行缩放
@@ -110,11 +111,14 @@ function wxAutoImageCal(originalWidth, originalHeight) {
   return results;
 }
 
-function wxParseTemArray(bindName,total,that){
+function wxParseTemArray(bindNameReg,total,that){
   var array = [];
   var temData = that.data;
+  
   for(var i = 0; i < total; i++){
-    var simArr = temData[bindName+i].tagArray;
+    console.log(bindNameReg+i);
+  console.log( temData[bindNameReg+i]);
+    var simArr = temData[bindNameReg+i].nodes;
     array.push(simArr);
   }
   that.setData({
@@ -122,9 +126,19 @@ function wxParseTemArray(bindName,total,that){
   });
 }
 
+/**
+ * 配置emojis
+ * 
+ */
+
+function emojisInit(reg='',baseSrc="/wxParse/emojis/",emojis){
+   HtmlToJson.emojisInit(reg,baseSrc,emojis);
+}
+
 module.exports = {
   wxParse: wxParse,
-  wxParseTemArray:wxParseTemArray
+  wxParseTemArray:wxParseTemArray,
+  emojisInit:emojisInit
 }
 
 
