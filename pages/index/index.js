@@ -1,5 +1,3 @@
-var Api = require('../../utils/api.js');
-var util = require('../../utils/util.js');
 var WxParse = require('../../wxParse/wxParse.js');
 Page({
   data: {
@@ -31,7 +29,6 @@ Page({
       "17": "17.gif",
       "18": "18.gif",
       "19": "19.gif",
-
     });
     /**
      * html解析示例

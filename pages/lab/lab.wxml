@@ -1,0 +1,23 @@
+
+<!--pages/lab/lab.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view style="padding: 0 30px; border-bottom:1px solid #eee;">
+  <view style="text-align:center; font-weight:bold;margin-top:20px;">实验室功能1: 动态插入</view>
+  <view style="text-align:center;color: #333;margin-top:5px;margin-bottom:10px;">本功能是一种扩展的可能,我们可以在需要动态插入标签的地方动态使用此方法</view>
+  <template is="wxParse" data="{{wxParseData:insertData.nodes}}" />
+  <view style="text-align:center">
+    <button type="default" size="mini" bindtap="insertNodeTap"> 点击插入节点 </button>
+  </view>
+</view>
+
+<view style="padding: 0 30px; border-bottom:1px solid #eee;">
+  <view style="text-align:center; font-weight:bold;margin-top:20px;">实验室功能2: a标签跳转</view>
+  <view style="text-align:center;color: #333;margin-top:5px;margin-bottom:10px;">在阅读类场景下，很可能需要在文中使用路由跳转。试验在动态获取解析到的src来转换本地路由</view>
+  <template is="wxParse" data="{{wxParseData:aHrefHrefData.nodes}}" />
+</view>
+
+<view style="padding: 0 30px; border-bottom:1px solid #eee;">
+  <view style="text-align:center; font-weight:bold;margin-top:20px;">实验室功能2: 小表情emoji</view>
+  <view style="text-align:center;color: #333;margin-top:5px;margin-bottom:10px;">在回复等场景下，很可能会出现小表情，添加进来</view>
+  <template is="wxParse" data="{{wxParseData:emojisData.nodes}}" />
+</view>

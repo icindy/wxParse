@@ -1,8 +1,7 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/zhihu/zhihu",
-    "pages/logs/logs"
+    "pages/lab/lab"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -21,7 +20,7 @@
       "selectedIconPath": "image/icon_API_HL.png",
       "text": "Demo"
     }, {
-      "pagePath": "pages/zhihu/zhihu",
+      "pagePath": "pages/lab/lab",
       "iconPath": "image/icon_API.png",
       "selectedIconPath": "image/icon_API_HL.png",
       "text": "实验室"
