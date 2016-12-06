@@ -136,10 +136,10 @@ function html2json(html, bindName) {
                 // like <img src="hoge.png"/>
                 // add to parents
                 var parent = bufArray[0] || results;
-                if (parent.child === undefined) {
-                    parent.child = [];
+                if (parent.nodes === undefined) {
+                    parent.nodes = [];
                 }
-                parent.child.push(node);
+                parent.nodes.push(node);
             } else {
                 bufArray.unshift(node);
             }
@@ -154,10 +154,10 @@ function html2json(html, bindName) {
                 results.nodes.push(node);
             } else {
                 var parent = bufArray[0];
-                if (parent.child === undefined) {
-                    parent.child = [];
+                if (parent.nodes === undefined) {
+                    parent.nodes = [];
                 }
-                parent.child.push(node);
+                parent.nodes.push(node);
             }
         },
         chars: function (text) {
@@ -172,10 +172,10 @@ function html2json(html, bindName) {
                 results.nodes.push(node);
             } else {
                 var parent = bufArray[0];
-                if (parent.child === undefined) {
-                    parent.child = [];
+                if (parent.nodes === undefined) {
+                    parent.nodes = [];
                 }
-                parent.child.push(node);
+                parent.nodes.push(node);
             }
         },
         comment: function (text) {
@@ -185,10 +185,10 @@ function html2json(html, bindName) {
                 text: text,
             };
             var parent = bufArray[0];
-            if (parent.child === undefined) {
-                parent.child = [];
+            if (parent.nodes === undefined) {
+                parent.nodes = [];
             }
-            parent.child.push(node);
+            parent.nodes.push(node);
         },
     });
     return results;
