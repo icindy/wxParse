@@ -1,3 +1,5 @@
+![wxParse-微信小程序富文本解析组件logo](screenshoot/wxParse_logo.jpg)
+
 ## 转换后的数据格式
 
 
