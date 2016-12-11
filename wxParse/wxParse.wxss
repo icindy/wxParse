@@ -179,3 +179,24 @@ view{
     width: 16px;
     height:16px;
 }
+.wxParse-tr{
+	display: flex;
+	border-right:1px solid #e0e0e0;
+	border-bottom:1px solid #e0e0e0;
+}
+.wxParse-th,
+.wxParse-td{
+	flex:1;
+	padding:5px;
+	font-size:28rpx;
+	border-left:1px solid #e0e0e0;
+	word-break: break-all;
+}
+.wxParse-td:last{
+	border-top:1px solid #e0e0e0;
+}
+.wxParse-th{
+	background:#f0f0f0;
+	border-top:1px solid #e0e0e0;
+}
+

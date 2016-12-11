@@ -95,6 +95,37 @@ Page({
 			请继续向下看，循环渲染多条html评论
 		</div>
 	</div>
+	<div style="margin-top:10px;">
+		<h3 style="color: #000;">支持短table标签</h3>
+		<blockquote>wxParse目前对于table的支持比较有限</blockquote>
+		<div style="margin-top:10px; text-align:center;">
+			<table>
+	  <tr>
+			<th>标题1</th>
+			<th>标题2</th>
+			<th>标题3</th>
+			<th>标题4</th>
+			<th>标题5</th>
+		</tr>
+	  <tr>
+		  <td>cell1</td>
+			<td>cell2</td>
+			<td>cell3</td>
+			<td>cell4</td>
+			<td>cell5</td>
+		</tr>
+		<tr>
+		  <td>cell1</td>
+			<td>cell2</td>
+			<td>cell3</td>
+			<td>cell4</td>
+			<td>cell5</td>
+		</tr>
+	</table>
+		</div>
+	</div>
+
+		
     `;
     
     WxParse.wxParse('article', 'html', article, that,5);
