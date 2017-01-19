@@ -70,7 +70,7 @@ var article = '<div>我是HTML代码</div>';
 * 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
 */
 var that = this;
-WxParse.wxParse('article', 'html', article, that,5);
+WxParse.wxParse('article', 'html', article, that, 5);
 ```
 
 * 4. 模版引用
