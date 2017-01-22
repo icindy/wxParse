@@ -125,8 +125,9 @@ Page({
 	</div>
 	<!--ap-->
     `;
+		
     
-    WxParse.wxParse('article', 'html', article, that,5);
+    WxParse.wxParse('article', 'html', article, that, 5);
 
 
     /**
