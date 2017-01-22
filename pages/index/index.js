@@ -39,7 +39,6 @@ Page({
 		<h1 style="color:red;">wxParse-微信小程序富文本解析组件</h1>
 		<h2>支持Html及markdown转wxml可视化</h2>
 	</div>
-
 	<div style="margin-top:10px;">
 		<h3 style="color: #000;">支持的标签</h3>
 		<blockquote>wxParse支持70%的html的标签</blockquote>

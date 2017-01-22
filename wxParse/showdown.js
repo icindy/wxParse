@@ -1,4 +1,7 @@
 /**
+ * 
+ * showdown: https://github.com/showdownjs/showdown
+ * 
  * author: Di (微信小程序开发工程师)
  * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
  *               垂直微信小程序开发交流社区
