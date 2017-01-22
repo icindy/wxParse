@@ -78,7 +78,7 @@ function HTMLParser(html, handler) {
 
 			if (chars) {
 				index = html.indexOf("<");
-                                var text = ''
+				var text = ''
 				while (index === 0) {
                                   text += "<";
                                   html = html.substring(1);
@@ -160,11 +160,12 @@ function HTMLParser(html, handler) {
 			var pos = 0;
 
 		// Find the closest opened tag of the same type
-		else
+		else {
+			tagName = tagName.toLowerCase();
 			for (var pos = stack.length - 1; pos >= 0; pos--)
 				if (stack[pos] == tagName)
 					break;
-
+		}
 		if (pos >= 0) {
 			// Close all the open elements, up the stack
 			for (var i = stack.length - 1; i >= pos; i--)
