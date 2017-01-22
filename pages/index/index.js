@@ -33,7 +33,7 @@ Page({
     /**
      * html解析示例
      */
-    var article = `
+    var article = `<!--注释: wxParse试验文本-->
       <div style="text-align:center;margin-top:10px;">
 		<img src="https://weappdev.com/uploads/default/original/1X/84512e0f4591bcf0dee42c3293f826e0c24b560c.jpg" alt="wxParse-微信小程序富文本解析组件Logo">	
 		<h1 style="color:red;">wxParse-微信小程序富文本解析组件</h1>
@@ -123,8 +123,7 @@ Page({
 	</table>
 		</div>
 	</div>
-
-		
+	<!--ap-->
     `;
     
     WxParse.wxParse('article', 'html', article, that,5);

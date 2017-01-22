@@ -181,6 +181,7 @@ function HTMLParser(html, handler) {
 	}
 };
 
+
 function makeMap(str) {
 	var obj = {}, items = str.split(",");
 	for (var i = 0; i < items.length; i++)

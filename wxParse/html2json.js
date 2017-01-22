@@ -183,15 +183,15 @@ function html2json(html, bindName) {
         },
         comment: function (text) {
             //debug(text);
-            var node = {
-                node: 'comment',
-                text: text,
-            };
-            var parent = bufArray[0];
-            if (parent.nodes === undefined) {
-                parent.nodes = [];
-            }
-            parent.nodes.push(node);
+            // var node = {
+            //     node: 'comment',
+            //     text: text,
+            // };
+            // var parent = bufArray[0];
+            // if (parent.nodes === undefined) {
+            //     parent.nodes = [];
+            // }
+            // parent.nodes.push(node);
         },
     });
     return results;
