@@ -33,11 +33,11 @@ Page({
     /**
      * html解析示例
      */
-    var article = `<!--注释: wxParse试验文本-->
+    var article = `< !DOCTYPE HTML ><!--注释: wxParse试验文本-->
       <div style="text-align:center;margin-top:10px;">
-		<img src="https://weappdev.com/uploads/default/original/1X/84512e0f4591bcf0dee42c3293f826e0c24b560c.jpg" alt="wxParse-微信小程序富文本解析组件Logo">	
+		<img src="https://weappdev.com/uploads/default/original/1X/84512e0f4591bcf0dee42c3293f826e0c24b560c.jpg" alt="wxParse-微信小程序富文本解析组件Logo">
 		<h1 style="color:red;">wxParse-微信小程序富文本解析组件</h1>
-		<h2>支持Html及markdown转wxml可视化</h2>
+		<h2 >支持Html及markdown转wxml可视化</h2>
 	</div>
 	<div style="margin-top:10px;">
 		<h3 style="color: #000;">支持的标签</h3>
