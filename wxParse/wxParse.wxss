@@ -77,7 +77,7 @@ view{
 .wxParse-s,.wxParse-strike,.wxParse-del{text-decoration:line-through}
 /*wxparse-自定义个性化的css样式*/
 /*增加video的css样式*/
-.wxParse-strong,wxParse-s{display: inline}
+.wxParse-strong,.wxParse-s{display: inline}
 .wxParse-a{
     color: deepskyblue;
     word-break:break-all;
