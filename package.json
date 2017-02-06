@@ -1,0 +1,21 @@
+{
+  "name": "wxParse",
+  "version": "0.3.0",
+  "description": "wxParse-微信小程序富文本解析自定义组件，支持HTML及markdown解析",
+  "homepage": "http://weappdev.com/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:icindy/wxParse.git"
+  },
+  "main": "wxParse/wxParse.js",
+  "scripts": {},
+  "keywords": [
+    "html",
+    "markdown",
+    "weapp",
+    "weixin",
+    "wxparse-html-markdown"
+  ],
+  "devDependencies": {},
+  "dependencies": {}
+}
