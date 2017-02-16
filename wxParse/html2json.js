@@ -133,7 +133,11 @@ function html2json(html, bindName) {
                 results.images.push(node);
                 results.imageUrls.push(imgUrl);
             }
-
+            //临时记录source资源
+            if(node.tag === 'source'){
+                results.source = node.attr.src;
+            }
+            
             if (unary) {
                 // if this tag dosen't have end tag
                 // like <img src="hoge.png"/>
@@ -153,6 +157,12 @@ function html2json(html, bindName) {
             var node = bufArray.shift();
             if (node.tag !== tag) console.error('invalid state: mismatch end tag');
 
+            //当有缓存source资源时于于video补上src资源
+            if(node.tag === 'video' && results.source){
+                node.attr.src = results.source;
+                delete result.source;
+            }
+            
             if (bufArray.length === 0) {
                 results.nodes.push(node);
             } else {
