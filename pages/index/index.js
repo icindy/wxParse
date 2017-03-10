@@ -52,7 +52,19 @@ Page({
 		<blockquote>wxParse支持70%的html的标签</blockquote>
 		<div style="margin-top:10px;">
 			<span>span标签</span>
-			<strong>strong标签</strong>
+			<strong style="color: red;">strong标签</strong>
+		</div>
+	</div>
+
+	<div style="margin-top:10px;">
+		<h3 style="color: #000;">支持的标签ul/li</h3>
+		<blockquote>带有内联的li</blockquote>
+		<div style="margin-top:10px;">
+			<ul>
+				<li style="color: red;">我是li 红色</li>
+				<li style="color: blue;">我是li 蓝色</li>
+				<li style="color: yelloe;">我是li 黄色</li>
+			</ul>
 		</div>
 	</div>
 
