@@ -133,6 +133,27 @@ function html2json(html, bindName) {
                 results.images.push(node);
                 results.imageUrls.push(imgUrl);
             }
+            
+            // 处理font标签样式属性
+            if (node.tag === 'font') {
+                var fontSize = ['x-small', 'small', 'medium', 'large', 'x-large', 'xx-large', '-webkit-xxx-large'];
+                var styleAttrs = {
+                    'color': 'color',
+                    'face': 'font-family',
+                    'size': 'font-size'
+                };
+                if (!node.attr.style) node.attr.style = [];
+                if (!node.styleStr) node.styleStr = '';
+                for (var key in styleAttrs) {
+                    if (node.attr[key]) {
+                        var value = key === 'size' ? fontSize[node.attr[key]-1] : node.attr[key];
+                        node.attr.style.push(styleAttrs[key]);
+                        node.attr.style.push(value);
+                        node.styleStr += styleAttrs[key] + ': ' + value + ';';
+                    }
+                }
+            }
+
             //临时记录source资源
             if(node.tag === 'source'){
                 results.source = node.attr.src;
