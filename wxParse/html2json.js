@@ -66,6 +66,7 @@ function html2json(html, bindName) {
         images:[],
         imageUrls:[]
     };
+    var index = 0;
     HTMLParser(html, {
         start: function (tag, attrs, unary) {
             //debug(tag, attrs, unary);
@@ -74,6 +75,17 @@ function html2json(html, bindName) {
                 node: 'element',
                 tag: tag,
             };
+
+            if (bufArray.length === 0) {
+                node.index = index.toString()
+                index += 1
+            } else {
+                var parent = bufArray[0];
+                if (parent.nodes === undefined) {
+                    parent.nodes = [];
+                }
+                node.index = parent.index + '.' + parent.nodes.length
+            }
 
             if (block[tag]) {
                 node.tagType = "block";
@@ -209,6 +221,7 @@ function html2json(html, bindName) {
                 if (parent.nodes === undefined) {
                     parent.nodes = [];
                 }
+                node.index = parent.index + '.' + parent.nodes.length
                 parent.nodes.push(node);
             }
         },
