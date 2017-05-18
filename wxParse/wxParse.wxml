@@ -82,7 +82,7 @@
 
         <!--a类型-->
         <block wx:elif="{{item.tag == 'a'}}">
-            <view bindtap="wxParseTagATap" class="wxParse-inline {{item.classStr}} wxParse-{{item.tag}}" data-c="{{item.attr.href}}"  style="{{item.styleStr}}">
+            <view bindtap="wxParseTagATap" class="wxParse-inline {{item.classStr}} wxParse-{{item.tag}}" data-src="{{item.attr.href}}"  style="{{item.styleStr}}">
                 <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
                     <template is="wxParse1" data="{{item}}"/>
                 </block>
