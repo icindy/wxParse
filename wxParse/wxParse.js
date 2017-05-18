@@ -70,7 +70,7 @@ function wxParseImgLoad(e) {
 // 假循环获取计算图片视觉最佳宽高
 function calMoreImageInfo(e, idx, that, bindName) {
   var temData = that.data[bindName];
-  if (temData.images.length == 0) {
+  if (!temData || temData.images.length == 0) {
     return;
   }
   var temImages = temData.images;
