@@ -75,6 +75,8 @@ WxParse.wxParse('article', 'html', article, that, 5);
 
 * 4. 模版引用
 ```
+// 引入模板
+<import src="你的路径/wxParse/wxParse.wxml"/>
 //这里data中article为bindName
 <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
 ```
