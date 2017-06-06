@@ -170,7 +170,7 @@ function strOtherDiscode(str){
     str = str.replace(/&hearts;/g, '♥');
 
     str = str.replace(/&diams;/g, '♦');
-
+    str = str.replace(/&#39;/g, '\'');
     return str;
 }
 
