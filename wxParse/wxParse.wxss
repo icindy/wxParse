@@ -201,3 +201,6 @@ view{
 .wxParse-del{
     display: inline;
 }
+.wxParse-figure {
+  overflow: hidden;
+}
