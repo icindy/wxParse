@@ -96,7 +96,6 @@ function strGreeceDiscode(str){
     str = str.replace(/&upsih;/g, 'ϒ');
     str = str.replace(/&piv;/g, 'ϖ');
     str = str.replace(/&middot;/g, '·');
-    str.replace(/•/g, '•');
     return str;
 }
 
