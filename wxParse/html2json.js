@@ -55,7 +55,7 @@ function removeDOCTYPE(html) {
 
 function trimHtml(html) {
   return html
-        .replace(/\n+/g, '')
+        .replace(/\r?\n+/g, '')
         .replace(/<!--.*?-->/ig, '')
         .replace(/\/\*.*?\*\//ig, '')
         .replace(/[ ]+</ig, '<')
@@ -227,6 +227,8 @@ function html2json(html, bindName) {
             };
             
             if (bufArray.length === 0) {
+                node.index = index.toString()
+                index += 1
                 results.nodes.push(node);
             } else {
                 var parent = bufArray[0];
