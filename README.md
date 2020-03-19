@@ -1,3 +1,5 @@
+<h1>抱歉各位，本项目已经停止维护，为了不给您使用造成问题，请仅做参考使用，感谢各位支持</h1>
+
 
 <p align="center"><a href="https://github.com/icindy/wxParse" target="_blank"><img src="screenshoot/wxParse_logo.jpg"></a></p>
 <p align="center"><a href="https://github.com/icindy/wxParse" target="_blank"><img src="screenshoot/weappmsg_qr.jpg"></a></p>
